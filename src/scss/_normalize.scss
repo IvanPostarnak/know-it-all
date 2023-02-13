@@ -10,6 +10,12 @@ $netbook-max-width: 1023px;
 $notebook-min-width: 1024px;
 $notebook-max-width: 1365px;
 
+$bottom-layer: 0;
+$background-layer: 1;
+$average-layer: 5;
+$top-layer: 10;
+$highest-layer: 1000;
+
 :root {
   font-family: monospace;
   font-weight: 400;
@@ -28,4 +34,10 @@ $notebook-max-width: 1365px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.body-of-the-page {
+  background-color: transparent;
+  position: relative;
+  z-index: $bottom-layer;
 }
