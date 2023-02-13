@@ -1,0 +1,21 @@
+:root {
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: black;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=index.css.map */
