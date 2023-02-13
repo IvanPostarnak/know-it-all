@@ -1,0 +1,13 @@
+.bubble {
+  width: 100%;
+  height: 100%;
+  @include max-width-and-height(1vw, 1vw);
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  z-index: $average-layer;
+
+  &--big-size {
+    @include max-width-and-height(10vw, 10vw);
+  }
+}
