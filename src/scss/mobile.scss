@@ -1,4 +1,5 @@
 @import './normalize';
+@import './../../blocks/add-card-form/add-card-form';
 @import './../../blocks/bubble/bubble';
 
 .container {
@@ -7,18 +8,46 @@
 }
 
 .slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: $background-layer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+	&--slide-intro {
+    @include linear-gradient(
+      0deg, 
+      rgba(0,18,255,1) 0%, 
+      rgba(0,255,239,1) 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+	}
+
+  &__inner {
     width: 100%;
     height: 100%;
-    position: relative;
-    z-index: $background-layer;
+    @include min-width-and-height(320px, 320px);
+    @include max-width-and-height(60vw, 60vh);
+    padding: 0 20px;
+    z-index: $top-layer;
 
-		&--slide-intro {
-      @include linear-gradient(
-        0deg, 
-        rgba(0,18,255,1) 0%, 
-        rgba(0,255,239,1) 100%);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-		}
+    &--slide-intro {
+
+    }
+  }
+
+  &__form-holder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &--slide-intro {
+        
+    }
+  }  
 }

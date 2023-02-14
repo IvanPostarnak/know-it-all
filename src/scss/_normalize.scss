@@ -37,6 +37,11 @@ $highest-layer: 1000;
   max-height: $height;
 }
 
+@mixin min-width-and-height($width, $height) {
+  min-width: $width;
+  min-height: $height;
+}
+
 :root {
   font-family: monospace;
   font-weight: 400;
