@@ -16,6 +16,18 @@ $average-layer: 5;
 $top-layer: 10;
 $highest-layer: 1000;
 
+$sharetechmono-font: 'Share Tech Mono', monospace;
+$ubuntumono-font: 'Ubuntu Mono', monospace;
+$default-font: 'Share Tech Mono', 'Ubuntu Mono', monospace;
+$regular: 400;
+$bold: 700;
+
+@mixin font-family-weight-size($family, $weight, $size) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+}
+
 @mixin box-sizing($sizing) {
   -webkit-box-sizing: $sizing;
   -moz-box-sizing: $sizing;
@@ -43,11 +55,9 @@ $highest-layer: 1000;
 }
 
 :root {
-  font-family: monospace;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 1.2;
-  color: black;
+  @include font-family-weight-size($default-font, $regular, 10px);
+  line-height: 1.2rem;
+  color: $black;
 }
 
 *,
