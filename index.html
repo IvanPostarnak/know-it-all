@@ -17,8 +17,36 @@
     <div class="slide slide--slide-intro">
       <div class="slide__inner slide__inner--slide-intro">
         <div class="slide__form-holder slide__form-holder--slide-intro">
-          <form action="#" class="add-card-form">
-            
+          <form class="add-card-form"
+                name="Add new card"
+                method="POST"
+                action="#">
+            <input class="add-card-form__input-question"
+                    type="text"
+                    placeholder="question"
+                    required
+                    tabindex="1">
+            <textarea class="add-card-form__textarea-answer"
+                      type="text"
+                      placeholder="answer"
+                      required
+                      tabindex="2"></textarea>
+            <select class="add-card-form__select-field add-card-form__select-field--main-catefory"
+                    name="main-category"
+                    id=""
+                    required
+                    tabindex="3">
+            </select>
+            <select class="add-card-form__select-field add-card-form__select-field--additional-categories"
+                    name="additional-categories"
+                    id=""
+                    required
+                    tabindex="4">
+            </select>
+            <button class="add-card-form__submit-button"
+                    type="submit">
+                    save card
+            </button>
           </form>
         </div>
       </div>
