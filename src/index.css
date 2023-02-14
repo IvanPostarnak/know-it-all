@@ -46,7 +46,11 @@
   max-height: 60px;
   border: 1px solid #000000;
   border-radius: 25px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
   line-height: 100%;
+  color: #000000;
   margin-bottom: 10px;
   padding: 10px 20px;
 }
@@ -60,6 +64,11 @@
   max-height: 180px;
   border: 1px solid #000000;
   border-radius: 25px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1em;
+  color: #000000;
   margin-bottom: 10px;
   padding: 20px 20px;
   resize: none;
@@ -86,6 +95,12 @@
   max-height: 60px;
   border: 1px solid #000000;
   border-radius: 25px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: #000000;
+  cursor: pointer;
 }
 
 ::placeholder {
