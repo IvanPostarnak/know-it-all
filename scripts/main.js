@@ -1,2 +1,2 @@
-import bubbleGlide from './../blocks/bubble/bubble'
+import bubbleGlide from './../blocks/bubble/bubble.mjs'
 bubbleGlide();
