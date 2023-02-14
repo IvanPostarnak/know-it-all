@@ -20,32 +20,29 @@
     <div class="slide slide--slide-intro">
       <div class="slide__inner slide__inner--slide-intro">
         <div class="slide__form-holder slide__form-holder--slide-intro">
-          <form class="add-card-form"
+          <form class="add-card-form js-cardForm"
                 name="Add new card"
                 method="POST"
                 action="#">
-            <input class="add-card-form__input-question"
+            <input class="add-card-form__input-question js-cardQuestion"
                     type="text"
                     placeholder="question"
-                    required
                     tabindex="1">
-            <textarea class="add-card-form__textarea-answer"
+            <textarea class="add-card-form__textarea-answer js-cardAnswer"
                       type="text"
                       placeholder="answer"
-                      required
                       tabindex="2"></textarea>
-            <select class="add-card-form__select-field add-card-form__select-field--main-catefory"
+            <select class="add-card-form__select-field add-card-form__select-field--main-catefory js-mainCategory"
                     name="main-category"
                     id=""
-                    required
                     tabindex="3">
             </select>
-            <select class="add-card-form__select-field add-card-form__select-field--additional-categories"
+            <select class="add-card-form__select-field add-card-form__select-field--additional-categories js-additionalCategory"
                     name="additional-categories"
                     id=""
                     tabindex="4">
             </select>
-            <button class="add-card-form__submit-button"
+            <button class="add-card-form__submit-button js-submitButton"
                     type="submit">
                     save card
             </button>
