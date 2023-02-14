@@ -63,5 +63,8 @@
 }
 
 ::placeholder {
-  
+  @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+  line-height: 1em;
+  color: $black;
+  opacity: 50%;
 }
