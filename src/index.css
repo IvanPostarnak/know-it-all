@@ -90,6 +90,10 @@
   padding: 10px 20px;
   margin-bottom: 10px;
 }
+.add-card-form__select-item {
+  width: 100%;
+  height: 100%;
+}
 .add-card-form__submit-button {
   display: block;
   width: 100%;
