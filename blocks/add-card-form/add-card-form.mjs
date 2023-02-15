@@ -1,30 +1,33 @@
 export default function addCardIntoDatabase() {
-  let cardForm = document.querySelector('.js-cardForm');
-  let cardQuestion = document.querySelector('.js-cardQuestion');
-  let cardAnswer = document.querySelector('.js-cardAnswer');
-  let mainCategory = document.querySelector('.js-mainCategory');
-  let submitButton = document.querySelector('.js-submitButton');
+  const cardForm = document.querySelector('.js-cardForm');
 
   cardForm.addEventListener("submit", (elem) => {
     elem.preventDefault();
-    if (isAppropriateQuestion(cardQuestion) === false) {
-      cardQuestion.focus();
-      alert('Question field is empty!');
-      return;
-    }
-    if (isAppropriateAnswer(cardAnswer) === false) {
-      cardAnswer.focus();
-      alert('Answer field is empty!');
-      return;
-    }
-    alert('Вы нажали на кнопку');
+
+    const formData = new FormData(cardForm);
+    const formObject = Object.fromEntries(formData.entries());
+    const formObjectJson = JSON.stringify(formObject);
+
+    console.log(formObjectJson);
+    saveData(formObjectJson).then((data) => console.log(data));
   })
 }
 
-function isAppropriateQuestion(questionValue) {
-  return questionValue.value !== '';
+async function saveData(data) {
+  const response = await fetch('https://jsonplaceholder.typicode.com/post', {
+    method: 'POST',
+    body: data,
+  });
+
+  await validateResponse(response);
+
+  return response.status;
 }
 
-function isAppropriateAnswer(answerValue) {
-  return answerValue.value !== '';
+async function validateResponse(response) {
+  try {
+    if (response.ok === false) throw new Error(`User Error: ${response.status}`);
+  } catch (error) {
+    console.log(error.message);
+  }
 }
