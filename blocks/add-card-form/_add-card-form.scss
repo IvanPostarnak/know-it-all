@@ -39,18 +39,24 @@
     resize: none;
   }
 
-  &__select-field {
+  &__select-holder {
     width: 100%;
     height: 10%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
     border: 1px solid $black;
     border-radius: 25px;
+    margin-bottom: 10px;
+  }
+
+  &__select-field {
+    width: 100%;
+    height: 100%;
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;
     color: rgba($black, $half-opacity);
+    border-radius: inherit;
     padding: 10px 20px;
-    margin-bottom: 10px;
 
     &--main-catefory {
     }
