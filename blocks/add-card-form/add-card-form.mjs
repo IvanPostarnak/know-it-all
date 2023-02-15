@@ -28,6 +28,8 @@ function createSelectElementsForCategories() {
 
   const mainSelect = document.createElement('select');
   mainSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--main-catefory');
+  mainSelect.setAttribute('name', 'main-category');
+  mainSelect.setAttribute('form', 'addNewCard');
   const mainSelectPlaceholder = document.createElement('option');
   mainSelectPlaceholder.value = "";
   mainSelectPlaceholder.text = 'main category';
@@ -46,7 +48,8 @@ function createSelectElementsForCategories() {
 
   const additionalSelect = document.createElement('select');
   additionalSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--additional-categories');
-  additionalSelect.setAttribute('mmultiple', '');
+  additionalSelect.setAttribute('name', 'additional-category');
+  additionalSelect.setAttribute('form', 'addNewCard');
   const additionalSelectPlaceholder = document.createElement('option');
   additionalSelectPlaceholder.value = "";
   additionalSelectPlaceholder.text = 'additional categories';
@@ -63,9 +66,6 @@ function createSelectElementsForCategories() {
     additionalSelect.append(option);
   }
 
-  arrayOfSelectHolders.forEach((elem) => {
-    elem.classList.add('add-card-form__select-holder');
-  })
   arrayOfSelectHolders[0].append(mainSelect);
   arrayOfSelectHolders[1].append(additionalSelect);
 }
