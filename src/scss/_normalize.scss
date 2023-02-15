@@ -22,6 +22,8 @@ $default-font: 'Share Tech Mono', 'JetBrains Mono', monospace;
 $regular: 400;
 $bold: 700;
 
+$half-opacity: 0.5;
+
 @mixin font-family-weight-size($family, $weight, $size) {
   font-family: $family;
   font-weight: $weight;

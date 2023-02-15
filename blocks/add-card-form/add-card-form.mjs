@@ -14,7 +14,7 @@ export default function addCardIntoDatabase() {
 }
 
 async function saveData(data) {
-  const response = await fetch('https://jsonplaceholder.typicode.com/post', {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: data,
   });
