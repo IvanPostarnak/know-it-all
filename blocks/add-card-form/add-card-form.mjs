@@ -24,8 +24,8 @@ export default function addCardIntoDatabase() {
 
 
 function createSelectElementsForCategories() {
-  const arrayOfSelectHolders = document.querySelectorAll('.add-card-form__select-holder');
-  
+  const arrayOfSelectHolders = document.querySelectorAll('.js-select-holder');
+
   const mainSelect = document.createElement('select');
   mainSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--main-catefory');
   const mainSelectPlaceholder = document.createElement('option');
@@ -63,6 +63,9 @@ function createSelectElementsForCategories() {
     additionalSelect.append(option);
   }
 
+  arrayOfSelectHolders.forEach((elem) => {
+    elem.classList.add('add-card-form__select-holder');
+  })
   arrayOfSelectHolders[0].append(mainSelect);
   arrayOfSelectHolders[1].append(additionalSelect);
 }
