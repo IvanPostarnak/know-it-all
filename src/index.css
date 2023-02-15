@@ -44,7 +44,7 @@
   min-height: 40px;
   max-width: 100%;
   max-height: 60px;
-  border: 1px solid #000000;
+  border: none;
   border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
@@ -62,7 +62,7 @@
   min-height: 120px;
   max-width: 100%;
   max-height: 180px;
-  border: 1px solid #000000;
+  border: none;
   border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
@@ -91,7 +91,7 @@
   font-size: 1.6rem;
   line-height: 100%;
   color: rgba(0, 0, 0, 0.5);
-  border: 1px solid #000000;
+  border: none;
   border-radius: 25px;
   padding: 10px 20px;
 }
@@ -107,7 +107,7 @@
   min-height: 40px;
   max-width: 100%;
   max-height: 60px;
-  border: 1px solid #000000;
+  border: none;
   border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;

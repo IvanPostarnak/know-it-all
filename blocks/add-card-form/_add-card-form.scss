@@ -14,7 +14,7 @@
     height: 10%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
-    border: 1px solid $black;
+    border: none;
     border-radius: 25px;
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;
@@ -29,7 +29,7 @@
     height: 30%;
     @include min-width-and-height(280px, 120px);
     @include max-width-and-height(100%, 180px);
-    border: 1px solid $black;
+    border: none;
     border-radius: 25px;
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 1em;
@@ -54,7 +54,7 @@
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;
     color: rgba($black, $half-opacity);
-    border: 1px solid $black;
+    border: none;
     border-radius: 25px;
     padding: 10px 20px;
 
@@ -76,7 +76,7 @@
     height: 10%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
-    border: 1px solid $black;
+    border: none;
     border-radius: 25px;
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;

@@ -24,6 +24,8 @@ $bold: 700;
 
 $half-opacity: 0.5;
 
+$default-box-shadow: 0px 0px 10px 0px $black;
+
 @mixin font-family-weight-size($family, $weight, $size) {
   font-family: $family;
   font-weight: $weight;
@@ -54,6 +56,14 @@ $half-opacity: 0.5;
 @mixin min-width-and-height($width, $height) {
   min-width: $width;
   min-height: $height;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 :root {
