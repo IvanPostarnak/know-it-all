@@ -1,16 +1,14 @@
-const tempCategories = {
-  'html': 'HTML',
-  'css': 'CSS',
-  'js': 'JavaScript',
-}
+import getCategoriesFromDatabase from './getCategoriesFromDatabase.mjs'
 
-export default function createSelectElementsForCategories() {
+export default async function createSelectElementsForCategories() {
+  const tempCategories = await getCategoriesFromDatabase();
   const arrayOfSelectHolders = document.querySelectorAll('.js-select-holder');
 
   const mainSelect = document.createElement('select');
   mainSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--main-catefory');
   mainSelect.setAttribute('name', 'main-category');
   mainSelect.setAttribute('form', 'addNewCard');
+  
   const mainSelectPlaceholder = document.createElement('option');
   mainSelectPlaceholder.value = "";
   mainSelectPlaceholder.text = 'main category';
@@ -31,6 +29,7 @@ export default function createSelectElementsForCategories() {
   additionalSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--additional-categories');
   additionalSelect.setAttribute('name', 'additional-category');
   additionalSelect.setAttribute('form', 'addNewCard');
+  
   const additionalSelectPlaceholder = document.createElement('option');
   additionalSelectPlaceholder.value = "";
   additionalSelectPlaceholder.text = 'additional categories';

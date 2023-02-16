@@ -1,8 +1,8 @@
 import createSelectElementsForCategories from './createSelectElements.mjs';
 import addCardIntoDatabase from './addCardIntoDatabase.mjs';
 
-export default function addCardForm() {
-  createSelectElementsForCategories();
+export default async function addCardForm() {
+  await createSelectElementsForCategories();
   
   const cardForm = document.querySelector('.js-cardForm');
 
