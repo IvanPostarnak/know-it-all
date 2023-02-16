@@ -4,48 +4,61 @@ export default async function createSelectElementsForCategories() {
   const tempCategories = await getCategoriesFromDatabase();
   const arrayOfSelectHolders = document.querySelectorAll('.js-select-holder');
 
-  const mainSelect = document.createElement('select');
-  mainSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--main-catefory');
-  mainSelect.setAttribute('name', 'main-category');
-  mainSelect.setAttribute('form', 'addNewCard');
-  
-  const mainSelectPlaceholder = document.createElement('option');
-  mainSelectPlaceholder.value = "";
-  mainSelectPlaceholder.text = 'main category';
-  mainSelectPlaceholder.setAttribute('selected', '');
-  mainSelectPlaceholder.setAttribute('disabled', '');
-  mainSelectPlaceholder.setAttribute('hidden', '');
+  const mainSelect = createMainSelect();
+  const mainSelectPlaceholder = createMainSelectPlaceholder();
   mainSelect.append(mainSelectPlaceholder);
 
-  for (let id in tempCategories) {
-    const option = document.createElement('option');
-    option.value = id;
-    option.text = tempCategories[id];
-    option.classList.add('add-card-form__select-item');
-    mainSelect.append(option);
-  }
-
-  const additionalSelect = document.createElement('select');
-  additionalSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--additional-categories');
-  additionalSelect.setAttribute('name', 'additional-category');
-  additionalSelect.setAttribute('form', 'addNewCard');
-  
-  const additionalSelectPlaceholder = document.createElement('option');
-  additionalSelectPlaceholder.value = "";
-  additionalSelectPlaceholder.text = 'additional categories';
-  additionalSelectPlaceholder.setAttribute('selected', '');
-  additionalSelectPlaceholder.setAttribute('disabled', '');
-  additionalSelectPlaceholder.setAttribute('hidden', '');
+  const additionalSelect = createAdditionalSelect();
+  const additionalSelectPlaceholder = createAdditionalSelectPlaceholder();
   additionalSelect.append(additionalSelectPlaceholder);
 
   for (let id in tempCategories) {
-    const option = document.createElement('option');
+    let option = document.createElement('option');
     option.value = id;
     option.text = tempCategories[id];
     option.classList.add('add-card-form__select-item');
-    additionalSelect.append(option);
+    let optionClone = option.cloneNode(true);
+    mainSelect.append(option);
+    additionalSelect.append(optionClone);
   }
 
   arrayOfSelectHolders[0].append(mainSelect);
   arrayOfSelectHolders[1].append(additionalSelect);
+}
+
+
+function createMainSelect() {
+  let mainSelect = document.createElement('select');
+  mainSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--main-catefory');
+  mainSelect.setAttribute('name', 'main-category');
+  mainSelect.setAttribute('form', 'addNewCard');
+  return mainSelect;
+}
+
+function createMainSelectPlaceholder() {
+  let placeholder = document.createElement('option');
+  placeholder.value = "";
+  placeholder.text = 'main category';
+  placeholder.setAttribute('selected', '');
+  placeholder.setAttribute('disabled', '');
+  placeholder.setAttribute('hidden', '');
+  return placeholder;
+}
+
+function createAdditionalSelect() {
+  let additionalSelect = document.createElement('select');
+  additionalSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--additional-categories');
+  additionalSelect.setAttribute('name', 'additional-category');
+  additionalSelect.setAttribute('form', 'addNewCard');
+  return additionalSelect;
+}
+
+function createAdditionalSelectPlaceholder() {
+  let placeholder = document.createElement('option');
+  placeholder.value = "";
+  placeholder.text = 'additional categories';
+  placeholder.setAttribute('selected', '');
+  placeholder.setAttribute('disabled', '');
+  placeholder.setAttribute('hidden', '');
+  return placeholder;
 }

@@ -2,7 +2,7 @@ import createSelectElementsForCategories from './createSelectElements.mjs';
 import addCardIntoDatabase from './addCardIntoDatabase.mjs';
 
 export default async function addCardForm() {
-  await createSelectElementsForCategories();
+  createSelectElementsForCategories();
   
   const cardForm = document.querySelector('.js-cardForm');
 
@@ -16,13 +16,4 @@ export default async function addCardForm() {
     console.log(formObjectJson);
     addCardIntoDatabase(formObjectJson).then((data) => console.log(data));
   })
-}
-
-
-async function validateResponse(response) {
-  try {
-    if (response.ok === false) throw new Error(`User Error: ${response.status}`);
-  } catch (error) {
-    console.log(error.message);
-  }
 }
