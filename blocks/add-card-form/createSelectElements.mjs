@@ -22,6 +22,8 @@ export default async function createSelectElementsForCategories() {
     additionalSelect.append(optionClone);
   }
 
+  arrayOfSelectHolders[0].textContent = '';
+  arrayOfSelectHolders[1].textContent = '';
   arrayOfSelectHolders[0].append(mainSelect);
   arrayOfSelectHolders[1].append(additionalSelect);
 }
