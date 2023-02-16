@@ -1,5 +1,62 @@
 {
-  "html": "HTML",
-  "css": "CSS",
-  "js": "JavaScript"
+  "html": {
+    "name": "HTML",
+    "iconUrl": ""
+  },
+  "css": {
+    "name": "CSS",
+    "iconUrl": ""
+  },
+  "sass": {
+    "name": "Sass / Scss",
+    "iconUrl": ""
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "iconUrl": ""
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "iconUrl": ""
+  },
+  "nodejs": {
+    "name": "Node JS",
+    "iconUrl": ""
+  },
+  "react": {
+    "name": "React",
+    "iconUrl": ""
+  },
+  "redux": {
+    "name": "Refux",
+    "iconUrl": ""
+  },
+  "git": {
+    "name": "Git",
+    "iconUrl": ""
+  },
+  "pixelart": {
+    "name": "Pixel Art",
+    "iconUrl": ""
+  },
+  "c": {
+    "name": "C",
+    "iconUrl": ""
+  },
+  "csharp": {
+    "name": "C#",
+    "iconUrl": ""
+  },
+  "redis": {
+    "name": "Redis",
+    "iconUrl": ""
+  },
+  "sql": {
+    "name": "SQL",
+    "iconUrl": ""
+  },
+  "webpack": {
+    "name": "Webpack",
+    "iconUrl": ""
+  }
 }
