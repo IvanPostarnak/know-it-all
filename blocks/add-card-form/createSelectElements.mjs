@@ -34,6 +34,7 @@ function createMainSelect() {
   mainSelect.classList.add('add-card-form__select-field', 'add-card-form__select-field--main-catefory');
   mainSelect.setAttribute('name', 'main-category');
   mainSelect.setAttribute('form', 'addNewCard');
+  mainSelect.setAttribute('required', '');
   return mainSelect;
 }
 
