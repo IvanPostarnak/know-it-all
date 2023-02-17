@@ -55,6 +55,10 @@
     "name": "SQL",
     "iconUrl": ""
   },
+  "php": {
+    "name": "PHP",
+    "iconUrl": ""
+  },
   "webpack": {
     "name": "Webpack",
     "iconUrl": ""
