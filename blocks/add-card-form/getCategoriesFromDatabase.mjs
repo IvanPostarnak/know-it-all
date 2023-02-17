@@ -1,5 +1,5 @@
 export default async function getCategoriesFromDatabase() {
-  let defaultCategoriesURL = '/database/defaultCategories.json';
+  let defaultCategoriesURL = '/server/index.php?categories=default';
 
   let response = await fetch(defaultCategoriesURL);
   let data = await response.json();
