@@ -13,7 +13,6 @@ export default async function addCardForm() {
     const formObject = Object.fromEntries(formData.entries());
     const formObjectJson = JSON.stringify(formObject);
 
-    console.log(formObjectJson);
-    addCardIntoDatabase(formObjectJson).then((data) => console.log(data));
+    addCardIntoDatabase(formObjectJson).then();
   })
 }

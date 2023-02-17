@@ -138,7 +138,6 @@
 
   }
 
-  fwrite($serverLog, "\n");
-  fwrite($serverLog, "\n");
+  fwrite($serverLog, "\n\n");
   fclose($serverLog);
 ?>
