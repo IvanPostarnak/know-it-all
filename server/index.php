@@ -1,13 +1,16 @@
 <?php
   $currentTime = date("Y-m-d");
-  $serverLog = fopen("./" . $currentTime . "_server-log.txt", "a");
+  $serverLog = fopen($_SERVER['DOCUMENT_ROOT'] . "/server/logs/" . $currentTime . "_server-log.txt", "a");
   fwrite($serverLog, "# Enter index.php at: " .date("H-i-s") . "\n");
   fwrite($serverLog, "\n");
 
-  define("USERS_CARDS_FILE_URL", "./../database/usersCards.json");
-  define("USERS_CATEGORIES_FILE_URL", "./../database/usersCategories.json");
-  define("DEFAULT_CARDS_FILE_URL", "./../database/defaultCards.json");
-  define("DEFAULT_CATEGORIES_FILE_URL", "./../database/defaultCategories.json");
+  define("ROOT", $_SERVER['DOCUMENT_ROOT']);
+  fwrite($serverLog, "\t\troot: " . ROOT . "\n");
+
+  define("USERS_CARDS_FILE_URL", ROOT . "/database/usersCards.json");
+  define("USERS_CATEGORIES_FILE_URL", ROOT . "/database/usersCategories.json");
+  define("DEFAULT_CARDS_FILE_URL", ROOT . "/database/defaultCards.json");
+  define("DEFAULT_CATEGORIES_FILE_URL", ROOT . "/database/defaultCategories.json");
 
   fwrite($serverLog, "\t\tUSERS_CARDS_FILE_URL: " . USERS_CARDS_FILE_URL . "\n");
   fwrite($serverLog, "\t\tUSERS_CATEGORIES_FILE_URL: " . USERS_CATEGORIES_FILE_URL . "\n");
@@ -17,9 +20,7 @@
 
   fwrite($serverLog, "\t=!SERVER[REQUEST_METHOD]: " . $_SERVER["REQUEST_METHOD"] . "\n");
   fwrite($serverLog, "\t\tSERVER[SERVER_NAME]: " . $_SERVER["SERVER_NAME"] . "\n");
-  //fwrite($serverLog, "\t\tSERVER[ARGV]: " . $_SERVER["argv"] . "\n");
   fwrite($serverLog, "\t\tSERVER[REMOTE_ADDR]: " . $_SERVER["REMOTE_ADDR"] . "\n");
-  //fwrite($serverLog, "\t\tSERVER[REMOTE_HOST]: " . $_SERVER["REMOTE_HOST"] . "\n");
   fwrite($serverLog, "\n");
 
   $responce = "1";

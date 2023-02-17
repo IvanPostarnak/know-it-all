@@ -4,4 +4,4 @@
 *.scss.map
 
 database/users*
-/server/*.txt
+/server/logs/*.txt
