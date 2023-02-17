@@ -36,18 +36,20 @@
     fwrite($serverLog, "\t\t\tDATA (Array): " . $dataArray . "\n");
     $lastKey = array_key_last($dataArray);
     fwrite($serverLog, "\t\t\tLAST KEY: " . $lastKey . "\n");
-    $lastValue = $dataArray[$lastKey];
+    $lastValue = array_pop($dataArray);
     fwrite($serverLog, "\t\t\tVALUE of LAST KEY: " . $lastValue . "\n");
+    $dataJSON = json_encode($dataArray);
+    fwrite($serverLog, "\t\t\tCLEANED DATA(json): " . $dataJSON . "\n");
 
     if ($lastKey == "categories" && $lastValue == "users") {
 
       fwrite($serverLog, "\t\t\tPOST[categories] = users branch\n");
-      $responce = file_put_contents(USERS_CATEGORIES_FILE_URL, $data, FILE_APPEND);
+      $responce = file_put_contents(USERS_CATEGORIES_FILE_URL, $dataJSON . "\n", FILE_APPEND);
 
     } else if ($lastKey == "cards" && $lastValue == "users") {
 
       fwrite($serverLog, "\t\t\tPOST[cards] = users branch\n");
-      $responce = file_put_contents(USERS_CARDS_FILE_URL, $data, FILE_APPEND);
+      $responce = file_put_contents(USERS_CARDS_FILE_URL, $dataJSON . "\n", FILE_APPEND);
 
     } else {
 
