@@ -1,6 +1,6 @@
 <?php
   $currentTime = date("Y-m-d");
-  $serverLog = fopen($_SERVER['DOCUMENT_ROOT'] . "/server/logs/" . $currentTime . "_server-log.txt", "a");
+  $serverLog = fopen($_SERVER['DOCUMENT_ROOT'] . "/server/logs/" . $currentTime . "_index-log.txt", "a");
   fwrite($serverLog, "# Enter index.php at: " .date("H-i-s") . "\n");
   fwrite($serverLog, "\n");
 
@@ -18,13 +18,13 @@
   fwrite($serverLog, "\t\tDEFAULT_CATEGORIES_FILE_URL: " . DEFAULT_CATEGORIES_FILE_URL . "\n");
   fwrite($serverLog, "\n");
 
-  fwrite($serverLog, "\t=!SERVER[REQUEST_METHOD]: " . $_SERVER["REQUEST_METHOD"] . "\n");
+  fwrite($serverLog, "\t!=SERVER[REQUEST_METHOD]: " . $_SERVER["REQUEST_METHOD"] . "\n");
   fwrite($serverLog, "\t\tSERVER[SERVER_NAME]: " . $_SERVER["SERVER_NAME"] . "\n");
   fwrite($serverLog, "\t\tSERVER[REMOTE_ADDR]: " . $_SERVER["REMOTE_ADDR"] . "\n");
   fwrite($serverLog, "\n");
 
-  $responce = "1";
-  fwrite($serverLog, "\t\t(initialization) RESPONCE = " . $responce . "\n");
+  $response = "1";
+  fwrite($serverLog, "\t\t(initialization) RESPONSE = " . $response . "\n");
   fwrite($serverLog, "\n");
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,28 +44,28 @@
     if ($lastKey == "categories" && $lastValue == "users") {
 
       fwrite($serverLog, "\t\t\tPOST[categories] = users branch\n");
-      $responce = file_put_contents(USERS_CATEGORIES_FILE_URL, $dataJSON . "\n", FILE_APPEND);
+      $response = file_put_contents(USERS_CATEGORIES_FILE_URL, $dataJSON . "\n", FILE_APPEND);
 
     } else if ($lastKey == "cards" && $lastValue == "users") {
 
       fwrite($serverLog, "\t\t\tPOST[cards] = users branch\n");
-      $responce = file_put_contents(USERS_CARDS_FILE_URL, $dataJSON . "\n", FILE_APPEND);
+      $response = file_put_contents(USERS_CARDS_FILE_URL, $dataJSON . "\n", FILE_APPEND);
 
     } else {
 
-      fwrite($serverLog, "\t\t\tRESPONCE = NULL branch\n");
-      $responce = null;
+      fwrite($serverLog, "\t\t\tRESPONSE = NULL branch\n");
+      $response = null;
 
     }
 
-    if ($responce == false) {
+    if ($response == false) {
 
-      fwrite($serverLog, "\t\t\tif RESPONCE = FALSE branch\n");
+      fwrite($serverLog, "\t\t\tif RESPONSE = FALSE branch\n");
       echo "Error: '" . $data . "' was NOT saved!";
 
-    } else if ($responce == null) {
+    } else if ($response == null) {
 
-      fwrite($serverLog, "\t\t\tif RESPONCE = NULL branch\n");
+      fwrite($serverLog, "\t\t\tif RESPONSE = NULL branch\n");
       echo "Error: 'POST-request' has INCORRECT parameters. '" . $data . "' was NOT saved!";
 
     } else {
@@ -80,54 +80,54 @@
     if ($_GET["categories"] == "users") {
 
       fwrite($serverLog, "\t\t\tGET[categories] = users branch\n");
-      $responce = file_get_contents(USERS_CATEGORIES_FILE_URL);
+      $response = file_get_contents(USERS_CATEGORIES_FILE_URL);
 
     } else if ($_GET["categories"] == "default") {
 
       fwrite($serverLog, "\t\t\tGET[categories] = default branch\n");
-      $responce = file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
+      $response = file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
 
     } else if ($_GET["categories"] == "users&default") {
 
       fwrite($serverLog, "\t\t\tGET[categories] = users&default branch\n");
-      $responce = file_get_contents(USERS_CATEGORIES_FILE_URL) . file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
+      $response = file_get_contents(USERS_CATEGORIES_FILE_URL) . file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
 
     } else if ($_GET["cards"] == "users") {
 
       fwrite($serverLog, "\t\t\tGET[cards] = users branch\n");
-      $responce = file_get_contents(USERS_CARDS_FILE_URL);
+      $response = file_get_contents(USERS_CARDS_FILE_URL);
 
     } else if ($_GET["cards"] == "default") {
 
       fwrite($serverLog, "\t\t\tGET[cards] = default branch\n");
-      $responce = file_get_contents(DEFAULT_CARDS_FILE_URL);
+      $response = file_get_contents(DEFAULT_CARDS_FILE_URL);
 
     } else if ($_GET["cards"] == "users&default") {
 
       fwrite($serverLog, "\t\t\tGET[cards] = users&default branch\n");
-      $responce = file_get_contents(USERS_CARDS_FILE_URL) . file_get_contents(DEFAULT_CARDS_FILE_URL);
+      $response = file_get_contents(USERS_CARDS_FILE_URL) . file_get_contents(DEFAULT_CARDS_FILE_URL);
 
     } else {
 
-      fwrite($serverLog, "\t\t\tRESPONCE = NULL branch\n");
-      $responce = null;
+      fwrite($serverLog, "\t\t\tRESPONSE = NULL branch\n");
+      $response = null;
       
     }
 
-    if ($responce == false) {
+    if ($response == false) {
 
-      fwrite($serverLog, "\t\t\tRESPONCE = FALSE branch\n");
+      fwrite($serverLog, "\t\t\tRESPONSE = FALSE branch\n");
       echo "Error: Info was not read!";
 
-    } else if ($responce == null) {
+    } else if ($response == null) {
 
-      fwrite($serverLog, "\t\t\tRESPONCE = NULL branch\n");
+      fwrite($serverLog, "\t\t\tRESPONSE = NULL branch\n");
       echo "Error: 'GET-request' has INCORRECT parameters. Info was not read!";
 
     } else {
 
       fwrite($serverLog, "\t\t\tSUCCESS branch\n");
-      echo $responce;
+      echo $response;
 
     }
 
