@@ -4,7 +4,7 @@ export default async function addCardIntoDatabase(data) {
 
   let sendingData = JSON.stringify(localObject);
 
-  const response = await fetch('/server/index.php', {
+  const response = await fetch('/server/server.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

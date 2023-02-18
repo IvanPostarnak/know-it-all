@@ -1,31 +1,57 @@
 <?php
-  $currentTime = date("Y-m-d");
-  define("SERVER_LOG_FILE_URL", $_SERVER['DOCUMENT_ROOT'] . "/server/logs/" . $currentTime . "_index-log.txt");
-  $serverLog = fopen(SERVER_LOG_FILE_URL, "a");
 
+  $currentDate = date("Y-m-d");
   define("ROOT", $_SERVER['DOCUMENT_ROOT']);
+  define("SERVER_LOG_FILE_URL", $_SERVER['DOCUMENT_ROOT'] . "/server/logs/" . $currentDate . "_server-log.txt");
   define("USERS_CARDS_FILE_URL", ROOT . "/database/usersCards.json");
   define("USERS_CATEGORIES_FILE_URL", ROOT . "/database/usersCategories.json");
   define("DEFAULT_CARDS_FILE_URL", ROOT . "/database/defaultCards.json");
   define("DEFAULT_CATEGORIES_FILE_URL", ROOT . "/database/defaultCategories.json");
 
-    fwrite($serverLog, "# Enter index.php at: " . date("H-i-s") . "\n\n");
 
-    fwrite($serverLog, "\t\tSERVER_LOG_FILE_URL: " . SERVER_LOG_FILE_URL . "\n");
-    fwrite($serverLog, "\t\tROOT: " . ROOT . "\n");
-    fwrite($serverLog, "\t\tUSERS_CARDS_FILE_URL: " . USERS_CARDS_FILE_URL . "\n");
-    fwrite($serverLog, "\t\tUSERS_CATEGORIES_FILE_URL: " . USERS_CATEGORIES_FILE_URL . "\n");
-    fwrite($serverLog, "\t\tDEFAULT_CARDS_FILE_URL: " . DEFAULT_CARDS_FILE_URL . "\n");
-    fwrite($serverLog, "\t\tDEFAULT_CATEGORIES_FILE_URL: " . DEFAULT_CATEGORIES_FILE_URL . "\n\n");
+  function open_daily_server_log_file_stream()
+  {
+    $serverLog = fopen(SERVER_LOG_FILE_URL, "a");
+    $isEmpty = file_get_contents(SERVER_LOG_FILE_URL, false, null, 0, 1);
 
-    fwrite($serverLog, "\t!=SERVER[REQUEST_METHOD]: " . $_SERVER["REQUEST_METHOD"] . "\n");
+    if ($isEmpty == false) {
+      initializate_empty_daily_server_log($serverLog);
+    }
+
+    return $serverLog;
+  }
+
+  function initializate_empty_daily_server_log($fs)
+  {
+    global $currentDate;
+    fwrite($fs, "- Start daily session " . $currentDate . ". Time: " . date("H-i-s") . "\n\n");
+    fwrite($fs, "\tserver CONSTANTS:\n");
+    fwrite($fs, "\t\tROOT: " . ROOT . "\n");
+    fwrite($fs, "\t\tSERVER_LOG_FILE_URL: " . SERVER_LOG_FILE_URL . "\n");
+    fwrite($fs, "\t\tUSERS_CARDS_FILE_URL: " . USERS_CARDS_FILE_URL . "\n");
+    fwrite($fs, "\t\tUSERS_CATEGORIES_FILE_URL: " . USERS_CATEGORIES_FILE_URL . "\n");
+    fwrite($fs, "\t\tDEFAULT_CARDS_FILE_URL: " . DEFAULT_CARDS_FILE_URL . "\n");
+    fwrite($fs, "\t\tDEFAULT_CATEGORIES_FILE_URL: " . DEFAULT_CATEGORIES_FILE_URL . "\n\n\n");
+  }
+
+
+  $serverLog = open_daily_server_log_file_stream();
+    fwrite($serverLog, "# ENTER index.php at: " . date("H-i-s") . "\n\n");    
+
+    fwrite($serverLog, "\t!=SERVER[REQUEST_METHOD]: >> " . $_SERVER["REQUEST_METHOD"] . " <<\n");
+    fwrite($serverLog, "\t\tSERVER[REQUEST_TIME]: " . $_SERVER["REQUEST_TIME"] . "\n");
     fwrite($serverLog, "\t\tSERVER[SERVER_NAME]: " . $_SERVER["SERVER_NAME"] . "\n");
-    fwrite($serverLog, "\t\tSERVER[REMOTE_ADDR]: " . $_SERVER["REMOTE_ADDR"] . "\n\n");
-
-  $response = "1";
-    fwrite($serverLog, "\t\t(initialization) RESPONSE = " . $response . "\n\n");
+    fwrite($serverLog, "\t\tSERVER[REMOTE_ADDR]: " . $_SERVER["REMOTE_ADDR"] . "\n");
+    fwrite($serverLog, "\t\tSERVER[SERVER_SOFTWARE]: " . $_SERVER["SERVER_SOFTWARE"] . "\n");
+    fwrite($serverLog, "\t\tSERVER[GATEWAY_INTERFACE]: " . $_SERVER["GATEWAY_INTERFACE"] . "\n");
+    fwrite($serverLog, "\t\tSERVER[SERVER_PROTOCOL]: " . $_SERVER["SERVER_PROTOCOL"] . "\n");
+    fwrite($serverLog, "\t\tSERVER[SERVER_ADMIN]: " . $_SERVER["SERVER_ADMIN"] . "\n");
+    fwrite($serverLog, "\t\tSERVER[SERVER_PORT]: " . $_SERVER["SERVER_PORT"] . "\n\n");
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $response = "1";
+      fwrite($serverLog, "\t\t(initialization) RESPONSE = " . $response . "\n\n");
 
     $data = file_get_contents("php://input");
     $dataArray = json_decode($data, true);
@@ -52,19 +78,19 @@
     } else {
 
       $response = null;
-        fwrite($serverLog, "\t\t\tRESPONSE = NULL branch\n");
+        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
 
     }
 
     if ($response == false) {
 
       echo "Error: '" . $data . "' was NOT saved!";
-        fwrite($serverLog, "\t\t\tif (RESPONSE = FALSE) branch\n");
+        fwrite($serverLog, "\t\t\tif (RESPONSE = false) branch\n");
 
     } else if ($response == null) {
 
       echo "Error: 'POST-request' has INCORRECT parameters. '" . $data . "' was NOT saved!";
-        fwrite($serverLog, "\t\t\tif (RESPONSE = NULL) branch\n");
+        fwrite($serverLog, "\t\t\tif (RESPONSE = null) branch\n");
 
     } else {
 
@@ -108,19 +134,19 @@
     } else {
 
       $response = null;
-        fwrite($serverLog, "\t\t\tRESPONSE = NULL branch\n");
+        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
       
     }
 
     if ($response == false) {
 
       echo "Error: Info was not read!";
-        fwrite($serverLog, "\t\t\tRESPONSE = FALSE branch\n");
+        fwrite($serverLog, "\t\t\tRESPONSE = false branch\n");
 
     } else if ($response == null) {
 
       echo "Error: 'GET-request' has INCORRECT parameters. Info was not read!";
-        fwrite($serverLog, "\t\t\tRESPONSE = NULL branch\n");
+        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
 
     } else {
 
@@ -136,7 +162,7 @@
 
   }
 
-    fwrite($serverLog, "\n# Exit(0) index.php and closing server-log.txt\n\n\n");
+    fwrite($serverLog, "\n# EXIT(0) index.php and closing server-log.txt\n\n\n");
   fclose($serverLog);
   exit(0);
 ?>
