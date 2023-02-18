@@ -15,10 +15,8 @@
     fwrite($serverLog, "\t\tSERVER[SERVER_ADMIN]: " . $_SERVER["SERVER_ADMIN"] . "\n");
     fwrite($serverLog, "\t\tSERVER[SERVER_PORT]: " . $_SERVER["SERVER_PORT"] . "\n\n");
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $response = "1";
-      fwrite($serverLog, "\t\t(initialization) RESPONSE = " . $response . "\n\n");
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $data = file_get_contents("php://input");
     $dataArray = json_decode($data, true);
@@ -32,27 +30,14 @@
       fwrite($serverLog, "\t\t\tVALUE of LAST KEY: " . $lastValue . "\n");
       fwrite($serverLog, "\t\t\tCLEANED DATA(json): " . $dataJSON . "\n\n");
 
-    if ($lastKey == "categories" && $lastValue == "users") {
+    $databaseManagerResponse = save_data($dataJSON, $lastKey, $lastValue);
 
-      $response = save_users_category($dataJSON);
-
-    } else if ($lastKey == "cards" && $lastValue == "users") {
-
-      $response = save_users_cards($dataJSON);
-
-    } else {
-
-      $response = null;
-        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
-
-    }
-
-    if ($response == false) {
+    if ($databaseManagerResponse == false) {
 
       echo "Server Error: Card was NOT saved!";
         fwrite($serverLog, "\t\t\tif (RESPONSE = false) branch\n");
 
-    } else if ($response == null) {
+    } else if ($databaseManagerResponse == null) {
 
       echo "Error: 'POST-request' has INCORRECT parameters. Card was NOT saved!";
         fwrite($serverLog, "\t\t\tif (RESPONSE = null) branch\n");
@@ -66,50 +51,32 @@
 
   } else if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    if ($_GET["categories"] == "users") {
-
-      $response = get_users_categories();
-
-    } else if ($_GET["categories"] == "default") {
-
-      $response = get_default_categories();
-
-    } else if ($_GET["categories"] == "users&default") {
-
-      $response = get_users_and_default_categories();
-
-    } else if ($_GET["cards"] == "users") {
-
-      $response = get_users_cards();
-
-    } else if ($_GET["cards"] == "default") {
-
-      $response = get_default_cards();
-
-    } else if ($_GET["cards"] == "users&default") {
-
-      $response = get_users_and_default_cards();
-
-    } else {
-
-      $response = null;
-        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
-      
+    switch (isset($_GET["categories"])) {
+      case true:
+        $databaseManagerResponse = get_data("categories", $_GET["categories"]);
+        break;
+      case false:
+        $databaseManagerResponse = get_data("cards", $_GET["cards"]);
+        break;
+      default:
+        $databaseManagerResponse = null;
+          fwrite($serverLog, "\t\t\tRESULT = null branch\n");
+        break;
     }
 
-    if ($response == false) {
+    if ($databaseManagerResponse == false) {
 
       echo "Server Error: Info was not read!";
         fwrite($serverLog, "\t\t\tRESPONSE = false branch\n");
 
-    } else if ($response == null) {
+    } else if ($databaseManagerResponse == null) {
 
       echo "Error: 'GET-request' has INCORRECT parameters. Info was not read!";
         fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
 
     } else {
 
-      echo $response;
+      echo $databaseManagerResponse;
         fwrite($serverLog, "\t\t\tSUCCESS branch\n");
 
     }

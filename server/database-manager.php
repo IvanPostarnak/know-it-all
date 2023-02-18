@@ -1,105 +1,73 @@
 <?php
   require_once "log-handler.php";
+  require_once "database-sub-functions.php";
 
-  function save_users_category($category)
+
+  function save_data($dataJSON, $lastKey, $lastValue) 
   {
     global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: save_users_category() function\n");
-      // fwrite($serverLog, "\t\t\tsaving categoty: " . $category . "\n");
+      fwrite($serverLog, "\t\tEnter: save_data() function\n");
+
+    $response = "1";
+      fwrite($serverLog, "\t\t\t(initialization) RESPONSE = " . $response . "\n");
+
+    if ($lastKey == "categories" && $lastValue == "users") {
+
+      $response = save_users_category($dataJSON);
+
+    } else if ($lastKey == "cards" && $lastValue == "users") {
+
+      $response = save_users_cards($dataJSON);
+
+    } else {
+
+      $response = null;
+        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
+    }
+
+      fwrite($serverLog, "\t\tExit: save_data() function\n");
     
-    $status = file_put_contents(USERS_CATEGORIES_FILE_URL, $category . "\n", FILE_APPEND);
-      fwrite($serverLog, "\t\t\tsaving status: " . $status . "\n");
-      fwrite($serverLog, "\t\t\texit: save_users_category() function\n");
-    
-      return $status;
+    return $response;
   }
 
-  function save_users_cards($card)
+  function get_data($getParameter, $parameterValue) 
   {
     global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: save_users_cards() function\n");
-      // fwrite($serverLog, "\t\t\tsaving card: " . $card . "\n");
-    
-    $status = file_put_contents(USERS_CARDS_FILE_URL, $card . "\n", FILE_APPEND);
-      fwrite($serverLog, "\t\t\tsaving status: " . $status . "\n");
-      fwrite($serverLog, "\t\t\texit: save_users_cards() function\n");
-    
-    return $status;
-  }
+      fwrite($serverLog, "\t\tEnter: get_data() function\n");
 
-  function get_users_categories()
-  {
-    global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: get_users_categories() function\n");
-    
-    $usersCategories = file_get_contents(USERS_CATEGORIES_FILE_URL);
-      // fwrite($serverLog, "\t\t\tUser's Categories: " . $usersCategories . "\n");
-      fwrite($serverLog, "\t\t\texit: get_users_categories() function\n");
-    
-    return $usersCategories;
-  }
+    if ($getParameter === "categories" &&  $parameterValue === "users") {
 
-  function get_default_categories()
-  {
-    global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: get_default_categories() function\n");
-    
-    $defaultCategories = file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
-      // fwrite($serverLog, "\t\t\tDefault Categories: " . $defaultCategories . "\n");
-      fwrite($serverLog, "\t\t\texit: get_default_categories() function\n");
-    
-    return $defaultCategories;
-  }
+      $response = get_users_categories();
+  
+    } else if ($getParameter === "categories" &&  $parameterValue === "default") {
+  
+      $response = get_default_categories();
+  
+    } else if ($getParameter === "categories" &&  $parameterValue === "users&default") {
+  
+      $response = get_users_and_default_categories();
+  
+    } else if ($getParameter === "cards" &&  $parameterValue === "users") {
+  
+      $response = get_users_cards();
+  
+    } else if ($getParameter === "cards" &&  $parameterValue === "default") {
+  
+      $response = get_default_cards();
+  
+    } else if ($getParameter === "cards" &&  $parameterValue === "users&default") {
+  
+      $response = get_users_and_default_cards();
+  
+    } else {
+  
+      $response = null;
+        fwrite($serverLog, "\t\t\tRESPONSE = null branch\n");
+        
+    } 
 
-  function get_users_and_default_categories()
-  {
-    global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: get_users_and_default_categories() function\n");
-    
-    $usersCategories = get_users_categories();
-    $defaultCategories = get_default_categories();
-    $usersAndDefaultCategories = $usersCategories . $defaultCategories;
-      // fwrite($serverLog, "\t\t\tUsers and Default Categories: " . $usersAndDefaultCategories . "\n");
-      fwrite($serverLog, "\t\t\texit: get_users_and_default_categories() function\n");
-    
-    return $usersAndDefaultCategories;
-  }
+      fwrite($serverLog, "\t\tExit: get_data() function\n");
 
-  function get_users_cards()
-  {
-    global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: get_users_cards() function\n");
-    
-    $usersCards = file_get_contents(USERS_CARDS_FILE_URL);
-      // fwrite($serverLog, "\t\t\tUser's cards: " . $usersCards . "\n");
-      fwrite($serverLog, "\t\t\texit: get_users_cards() function\n");
-    
-    return $usersCards;
-  }
-
-  function get_default_cards()
-  {
-    global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: get_default_cards() function\n");
-    
-    $defaultCards = file_get_contents(DEFAULT_CARDS_FILE_URL);
-      // fwrite($serverLog, "\t\t\tDefault cards: " . $defaultCards . "\n");
-      fwrite($serverLog, "\t\t\texit: get_default_cards() function\n");
-    
-    return $defaultCards;
-  }
-
-  function get_users_and_default_cards()
-  {
-    global $serverLog;
-      fwrite($serverLog, "\t\t\tenter: get_users_and_default_cards() function\n");
-    
-    $usersCards = get_users_cards();
-    $defaultCards = get_default_cards();
-    $usersAndDefaultCards = $usersCards . $defaultCards;
-      // fwrite($serverLog, "\t\t\tUsers and Default Cards: " . $usersAndDefaultCards . "\n");
-      fwrite($serverLog, "\t\t\texit: get_users_and_default_cards() function\n");
-    
-    return $usersAndDefaultCards;
+    return $response;
   }
 ?>
