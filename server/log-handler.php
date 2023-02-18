@@ -32,4 +32,6 @@
     fwrite($fs, "\t\tDEFAULT_CARDS_FILE_URL: " . DEFAULT_CARDS_FILE_URL . "\n");
     fwrite($fs, "\t\tDEFAULT_CATEGORIES_FILE_URL: " . DEFAULT_CATEGORIES_FILE_URL . "\n\n\n");
   }
+
+  $serverLog = open_daily_server_log_file_stream();
 ?>

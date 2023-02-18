@@ -1,10 +1,10 @@
 <?php
-
   require_once "log-handler.php";
+  require_once "database-manager.php";
 
-  $serverLog = open_daily_server_log_file_stream();
+  global $serverLog;
+
     fwrite($serverLog, "# ENTER index.php at: " . date("H-i-s") . "\n\n");    
-
     fwrite($serverLog, "\t!=SERVER[REQUEST_METHOD]: >> " . $_SERVER["REQUEST_METHOD"] . " <<\n");
     fwrite($serverLog, "\t\tSERVER[REQUEST_TIME]: " . $_SERVER["REQUEST_TIME"] . "\n");
     fwrite($serverLog, "\t\tSERVER[SERVER_NAME]: " . $_SERVER["SERVER_NAME"] . "\n");
@@ -30,17 +30,15 @@
       fwrite($serverLog, "\t\t\tDATA (Array): " . $dataArray . "\n");
       fwrite($serverLog, "\t\t\tLAST KEY: " . $lastKey . "\n");
       fwrite($serverLog, "\t\t\tVALUE of LAST KEY: " . $lastValue . "\n");
-      fwrite($serverLog, "\t\t\tCLEANED DATA(json): " . $dataJSON . "\n");
+      fwrite($serverLog, "\t\t\tCLEANED DATA(json): " . $dataJSON . "\n\n");
 
     if ($lastKey == "categories" && $lastValue == "users") {
 
-      $response = file_put_contents(USERS_CATEGORIES_FILE_URL, $dataJSON . "\n", FILE_APPEND);
-        fwrite($serverLog, "\t\t\tPOST [categories] = 'users' branch\n");
+      $response = save_users_category($dataJSON);
 
     } else if ($lastKey == "cards" && $lastValue == "users") {
 
-      $response = file_put_contents(USERS_CARDS_FILE_URL, $dataJSON . "\n", FILE_APPEND);
-        fwrite($serverLog, "\t\t\tPOST [cards] = 'users' branch\n");
+      $response = save_users_cards($dataJSON);
 
     } else {
 
@@ -51,17 +49,17 @@
 
     if ($response == false) {
 
-      echo "Error: '" . $data . "' was NOT saved!";
+      echo "Server Error: Card was NOT saved!";
         fwrite($serverLog, "\t\t\tif (RESPONSE = false) branch\n");
 
     } else if ($response == null) {
 
-      echo "Error: 'POST-request' has INCORRECT parameters. '" . $data . "' was NOT saved!";
+      echo "Error: 'POST-request' has INCORRECT parameters. Card was NOT saved!";
         fwrite($serverLog, "\t\t\tif (RESPONSE = null) branch\n");
 
     } else {
 
-      echo "Success! '" . $data . "' was saved!";
+      echo "Success! Card was saved!";
         fwrite($serverLog, "\t\t\tSUCCESS branch\n");
 
     }
@@ -70,33 +68,27 @@
 
     if ($_GET["categories"] == "users") {
 
-      $response = file_get_contents(USERS_CATEGORIES_FILE_URL);
-        fwrite($serverLog, "\t\t\tGET [categories] = 'users' branch\n");
+      $response = get_users_categories();
 
     } else if ($_GET["categories"] == "default") {
 
-      $response = file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
-        fwrite($serverLog, "\t\t\tGET [categories] = 'default' branch\n");
+      $response = get_default_categories();
 
     } else if ($_GET["categories"] == "users&default") {
 
-      $response = file_get_contents(USERS_CATEGORIES_FILE_URL) . file_get_contents(DEFAULT_CATEGORIES_FILE_URL);
-        fwrite($serverLog, "\t\t\tGET [categories] = 'users&default' branch\n");
+      $response = get_users_and_default_categories();
 
     } else if ($_GET["cards"] == "users") {
 
-      $response = file_get_contents(USERS_CARDS_FILE_URL);
-        fwrite($serverLog, "\t\t\tGET [cards] = 'users' branch\n");
+      $response = get_users_cards();
 
     } else if ($_GET["cards"] == "default") {
 
-      $response = file_get_contents(DEFAULT_CARDS_FILE_URL);
-        fwrite($serverLog, "\t\t\tGET [cards] = 'default' branch\n");
+      $response = get_default_cards();
 
     } else if ($_GET["cards"] == "users&default") {
 
-      $response = file_get_contents(USERS_CARDS_FILE_URL) . file_get_contents(DEFAULT_CARDS_FILE_URL);
-        fwrite($serverLog, "\t\t\tGET [cards] = 'users&default' branch\n");
+      $response = get_users_and_default_cards();
 
     } else {
 
@@ -107,7 +99,7 @@
 
     if ($response == false) {
 
-      echo "Error: Info was not read!";
+      echo "Server Error: Info was not read!";
         fwrite($serverLog, "\t\t\tRESPONSE = false branch\n");
 
     } else if ($response == null) {
