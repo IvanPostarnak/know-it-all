@@ -19,6 +19,9 @@
   height: 100%;
   @include min-width-and-height(280px, 450px);
   @include max-width-and-height(100vw, 100vh);
+  @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+  line-height: 1.2em;
+  color: $black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,20 +51,15 @@
   }
 
   &__question {
-    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
-    line-height: 1em;
-    color: $black;
   }
 
   &__answer {
-    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
-    line-height: 1em;
-    color: $black;
     margin-top: 30px;
   }
 
   &__info {
     width: 100%;
+    @include font-family-weight-size($jetbrains-font, $regular, 1.2rem);
     display: block;
     display: flex;
     flex-direction: row;
@@ -84,10 +82,22 @@
     text-align: end;
   }
 
+  &__main-category-wrapper {
+  }
+
   &__main-category {
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 1.2em;
+    display: block;
+    cursor: pointer;
+  }
+
+  &__additional-categories-wrapper {
   }
 
   &__additional-categories {
+    display: block;
+    cursor: pointer;
   }
 
   &__metadata {
@@ -95,11 +105,17 @@
   }
 
   &__time {
+    display: block;
+    cursor: pointer;
   }
 
   &__type {
+    display: block;
+    cursor: pointer;
   }
 
   &__lang {
+    display: block;
+    cursor: pointer;
   }
 }
