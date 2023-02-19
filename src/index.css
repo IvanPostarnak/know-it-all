@@ -240,6 +240,92 @@
   max-height: 10vw;
 }
 
+.single-card-preloader {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes ldio-1akyqjrxu0e-o {
+  0% {
+    opacity: 1;
+    transform: translate(0 0);
+  }
+  49.99% {
+    opacity: 1;
+    transform: translate(30px, 0);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(30px, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes ldio-1akyqjrxu0e {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.ldio-1akyqjrxu0e div {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 35px;
+  left: 20px;
+}
+
+.ldio-1akyqjrxu0e div:nth-child(1) {
+  background: #1110fe;
+  animation: ldio-1akyqjrxu0e 0.5714285714s linear infinite;
+  animation-delay: -0.2857142857s;
+}
+
+.ldio-1akyqjrxu0e div:nth-child(2) {
+  background: #c600f5;
+  animation: ldio-1akyqjrxu0e 0.5714285714s linear infinite;
+  animation-delay: 0s;
+}
+
+.ldio-1akyqjrxu0e div:nth-child(3) {
+  background: #1110fe;
+  animation: ldio-1akyqjrxu0e-o 0.5714285714s linear infinite;
+  animation-delay: -0.2857142857s;
+}
+
+.loadingio-spinner-dual-ball-bp6pqhi51sp {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.ldio-1akyqjrxu0e {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+
+.ldio-1akyqjrxu0e div {
+  box-sizing: content-box;
+}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -258,23 +344,22 @@
   align-items: center;
 }
 .slide--slide-intro {
-  background-image: -webkit-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: -moz-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: -ms-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: -o-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
+  background-image: -webkit-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -moz-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -ms-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -o-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .slide--slide-cards {
   height: auto;
-  min-height: 100vh;
-  background-image: -webkit-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -moz-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -ms-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -o-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -webkit-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
+  background-image: -moz-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
+  background-image: -ms-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
+  background-image: -o-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
+  background-image: linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -282,23 +367,25 @@
 .slide__inner {
   width: 100%;
   height: 100%;
-  padding: 0 20px;
   z-index: 10;
   display: flex;
   justify-content: space-between;
 }
 .slide__inner--slide-intro {
   min-width: 320px;
-  min-height: 320px;
+  min-height: 360px;
   max-width: 60vw;
-  max-height: 60vh;
+  max-height: 80vh;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
 }
 .slide__inner--slide-cards {
   min-width: 320px;
-  min-height: 320px;
+  min-height: 470px;
   flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 .slide__title {
@@ -319,6 +406,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.slide__single-card-holder {
+  width: 100%;
+  height: 100%;
+  min-width: 280px;
+  min-height: 450px;
+  max-width: 30vw;
+  max-height: 640px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
 }
 
 /*# sourceMappingURL=index.css.map */
