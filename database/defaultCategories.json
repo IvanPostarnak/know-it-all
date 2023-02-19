@@ -1,66 +1,87 @@
 {
+  "Shared": {
+    "name": "Shared",
+    "iconUrl": "",
+    "description": "shared-description"
+  },
   "html": {
     "name": "HTML",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "html-description"
   },
   "css": {
     "name": "CSS",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "css-description"
   },
   "sass": {
     "name": "Sass / Scss",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "sass-description"
   },
   "javascript": {
     "name": "JavaScript",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "js-description"
   },
   "typescript": {
     "name": "TypeScript",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "ts-description"
   },
   "nodejs": {
     "name": "Node JS",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "nodejs-description"
   },
   "react": {
     "name": "React",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "react-description"
   },
   "redux": {
-    "name": "Refux",
-    "iconUrl": ""
+    "name": "Redux",
+    "iconUrl": "",
+    "description": "redux-description"
   },
   "git": {
     "name": "Git",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "git-description"
   },
   "pixelart": {
     "name": "Pixel Art",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "pixelart-description"
   },
   "c": {
     "name": "C",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "c-description"
   },
   "csharp": {
     "name": "C#",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "csharp-description"
   },
   "redis": {
     "name": "Redis",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "redis-description"
   },
   "sql": {
     "name": "SQL",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "sql-description"
   },
   "php": {
     "name": "PHP",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "php-description"
   },
   "webpack": {
     "name": "Webpack",
-    "iconUrl": ""
+    "iconUrl": "",
+    "description": "webpack-description"
   }
 }
