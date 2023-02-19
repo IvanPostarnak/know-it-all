@@ -1,0 +1,50 @@
+{
+  "1": {
+    "question": "What is 'Know it all' websile?",
+    "answer": "'Know it all' is a website, that allows you to save your knowledge remotely in 'question-answer' form",
+    "main-category": "shared",
+    "lang": "en",
+    "type": "default",
+    "time": {
+      "year": 2023,
+      "month": 1,
+      "day": 19,
+      "weekDay": 0,
+      "hour": 3,
+      "minutes": 41,
+      "seconds": 6
+    }
+  },
+  "2": {
+    "question": "How to use 'Know it all' website?",
+    "answer": "Create a question and connecting answer you want to save, and fill the form with them",
+    "main-category": "shared",
+    "lang": "en",
+    "type": "default",
+    "time": {
+      "year": 2023,
+      "month": 1,
+      "day": 19,
+      "weekDay": 0,
+      "hour": 3,
+      "minutes": 41,
+      "seconds": 7
+    }
+  },
+  "3": {
+    "question": "Who is author of Know it all' website?",
+    "answer": "Authors of 'Know it all' project are Ivan and Sam Postarnak postarnak",
+    "main-category": "shared",
+    "lang": "en",
+    "type": "default",
+    "time": {
+      "year": 2023,
+      "month": 1,
+      "day": 19,
+      "weekDay": 0,
+      "hour": 3,
+      "minutes": 41,
+      "seconds": 7
+    }
+  }
+}
