@@ -36,7 +36,7 @@
     @include linear-gradient(
       180deg,
       rgba(0,18,255,1) 0%,
-      rgba(201,0,245,1) 100%);
+      rgba(0,255,239,1) 100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -101,5 +101,7 @@
     display: flex;
     align-items: center;
     margin: 10px 20px;
+    z-index: $top-layer;
+    overflow: hidden;
   }
 }

@@ -130,6 +130,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 .add-card-form__input-question {
   display: block;
@@ -249,63 +250,75 @@
   align-items: center;
 }
 
-@keyframes ldio-1akyqjrxu0e-o {
+@keyframes ldio-nxtxow40e7-1 {
   0% {
-    opacity: 1;
-    transform: translate(0 0);
-  }
-  49.99% {
-    opacity: 1;
-    transform: translate(30px, 0);
+    top: 15px;
+    height: 70px;
   }
   50% {
-    opacity: 0;
-    transform: translate(30px, 0);
+    top: 32.5px;
+    height: 35px;
   }
   100% {
-    opacity: 0;
-    transform: translate(0, 0);
+    top: 32.5px;
+    height: 35px;
   }
 }
-@keyframes ldio-1akyqjrxu0e {
+@keyframes ldio-nxtxow40e7-2 {
   0% {
-    transform: translate(0, 0);
+    top: 19.375px;
+    height: 61.25px;
   }
   50% {
-    transform: translate(30px, 0);
+    top: 32.5px;
+    height: 35px;
   }
   100% {
-    transform: translate(0, 0);
+    top: 32.5px;
+    height: 35px;
   }
 }
-.ldio-1akyqjrxu0e div {
+@keyframes ldio-nxtxow40e7-3 {
+  0% {
+    top: 23.75px;
+    height: 52.5px;
+  }
+  50% {
+    top: 32.5px;
+    height: 35px;
+  }
+  100% {
+    top: 32.5px;
+    height: 35px;
+  }
+}
+.ldio-nxtxow40e7 div {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  top: 35px;
-  left: 20px;
+  width: 15px;
 }
 
-.ldio-1akyqjrxu0e div:nth-child(1) {
-  background: #1110fe;
-  animation: ldio-1akyqjrxu0e 0.5714285714s linear infinite;
-  animation-delay: -0.2857142857s;
+.ldio-nxtxow40e7 div:nth-child(1) {
+  left: 17.5px;
+  background: #001afe;
+  animation: ldio-nxtxow40e7-1 0.6666666667s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.1333333333s;
 }
 
-.ldio-1akyqjrxu0e div:nth-child(2) {
-  background: #c600f5;
-  animation: ldio-1akyqjrxu0e 0.5714285714s linear infinite;
-  animation-delay: 0s;
+.ldio-nxtxow40e7 div:nth-child(2) {
+  left: 42.5px;
+  background: #2196f3;
+  animation: ldio-nxtxow40e7-2 0.6666666667s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.0666666667s;
 }
 
-.ldio-1akyqjrxu0e div:nth-child(3) {
-  background: #1110fe;
-  animation: ldio-1akyqjrxu0e-o 0.5714285714s linear infinite;
-  animation-delay: -0.2857142857s;
+.ldio-nxtxow40e7 div:nth-child(3) {
+  left: 67.5px;
+  background: #00fcef;
+  animation: ldio-nxtxow40e7-3 0.6666666667s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: undefineds;
 }
 
-.loadingio-spinner-dual-ball-bp6pqhi51sp {
+.loadingio-spinner-pulse-if2u0pyqwxs {
   width: 100px;
   height: 100px;
   display: inline-block;
@@ -313,7 +326,7 @@
   background: #ffffff;
 }
 
-.ldio-1akyqjrxu0e {
+.ldio-nxtxow40e7 {
   width: 100%;
   height: 100%;
   position: relative;
@@ -322,10 +335,67 @@
   transform-origin: 0 0; /* see note above */
 }
 
-.ldio-1akyqjrxu0e div {
+.ldio-nxtxow40e7 div {
   box-sizing: content-box;
 }
 
+.single-card {
+  width: 100%;
+  height: 100%;
+  min-width: 280px;
+  min-height: 450px;
+  max-width: 30vw;
+  max-height: 640px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.single-card__content {
+  width: 100%;
+  height: auto;
+}
+.single-card__header-line {
+  width: 100%;
+  height: 20%;
+}
+.single-card__header-line::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-top: 15px;
+}
+.single-card__question {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1em;
+  color: #000000;
+}
+.single-card__answer {
+  width: 100%;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1em;
+  color: #000000;
+  margin-top: 20px;
+  white-space: normal;
+}
+.single-card__info {
+  width: auto;
+}
+.single-card__info::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-bottom: 15px;
+}
 .container {
   width: 100%;
   height: 100vh;
@@ -355,11 +425,11 @@
 }
 .slide--slide-cards {
   height: auto;
-  background-image: -webkit-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: -moz-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: -ms-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: -o-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
-  background-image: linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(201, 0, 245) 100%);
+  background-image: -webkit-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -moz-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -ms-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -o-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -419,6 +489,8 @@
   display: flex;
   align-items: center;
   margin: 10px 20px;
+  z-index: 10;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=index.css.map */
