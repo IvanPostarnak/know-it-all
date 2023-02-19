@@ -1,5 +1,17 @@
 export default async function addCardIntoDatabase(data) {
   let localObject = await JSON.parse(data);
+  localObject['lang'] = 'ru';
+  localObject['type'] = 'users';
+  let thisMoment = new Date();
+  localObject['time'] = {
+    year: thisMoment.getFullYear(),
+    month: thisMoment.getMonth(),
+    day: thisMoment.getDate(),
+    weekDay: thisMoment.getDay(),
+    hour: thisMoment.getHours(),
+    minutes: thisMoment.getMinutes(),
+    seconds: thisMoment.getSeconds()
+  };
   localObject['cards'] = 'users';
 
   let sendingData = JSON.stringify(localObject);
