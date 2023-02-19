@@ -5,6 +5,10 @@
 .container {
   width: 100%;
   height: 100vh;
+
+  &--slide-cards {
+    height: auto;
+  }
 }
 
 .slide {
@@ -20,26 +24,43 @@
     @include linear-gradient(
       0deg, 
       rgba(0,18,255,1) 0%, 
-      rgba(0,255,239,1) 100%);
+      rgba(201,0,245,1) 100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 	}
 
+  &--slide-cards {
+    height: auto;
+    min-height: 100vh;
+    @include linear-gradient(
+      180deg,
+      rgba(0,18,255,1) 0%,
+      rgba(0,255,239,1) 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
   &__inner {
     width: 100%;
     height: 100%;
-    @include min-width-and-height(320px, 320px);
-    @include max-width-and-height(60vw, 60vh);
     padding: 0 20px;
     z-index: $top-layer;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 
     &--slide-intro {
+      @include min-width-and-height(320px, 320px);
+      @include max-width-and-height(60vw, 60vh);
+      flex-direction: column;
+      align-items: center;
+    }
 
+    &--slide-cards {
+      @include min-width-and-height(320px, 320px);
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 
