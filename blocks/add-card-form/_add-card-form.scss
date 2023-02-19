@@ -1,5 +1,15 @@
 @import './one-field-preloader';
 
+.form-holder {
+  width: 100%;
+  height: 100%;
+  @include min-width-and-height(280px, 320px);
+  @include max-width-and-height(100%, 640px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .add-card-form {
   width: 100%;
   height: 100%;

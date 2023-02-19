@@ -1,5 +1,19 @@
 @import "./single-card-preloader";
 
+.single-card-holder {
+  width: 100%;
+  height: 100%;
+  @include min-width-and-height(280px, 450px);
+  @include max-width-and-height(60vw, 640px);
+  background-color: $white;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+  z-index: $top-layer;
+  overflow: hidden;
+}
+
 .single-card {
   width: 100%;
   height: 100%;
@@ -19,6 +33,7 @@
   &__header-line {
     width: 100%;
     height: auto;
+    position: relative;
   }
 
   &__header-line::after {
@@ -27,7 +42,9 @@
     content: '';
     background-color: rgba($black, 0.2);
     display: block;
-    margin-top: 15px;
+    left: 0;
+    bottom: -15px;
+    position: absolute;
   }
 
   &__question {
@@ -40,15 +57,27 @@
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 1em;
     color: $black;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   &__info {
     width: 100%;
+    display: block;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
+  }
+
+  &__info::before {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: -15px;
+    content: '';
+    background-color: rgba($black, 0.2);
   }
 
   &__categories {
