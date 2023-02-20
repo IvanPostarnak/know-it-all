@@ -6,6 +6,7 @@
   define("USERS_CATEGORIES_FILE_URL", ROOT . "/database/usersCategories.json");
   define("DEFAULT_CARDS_FILE_URL", ROOT . "/database/defaultCards.json");
   define("DEFAULT_CATEGORIES_FILE_URL", ROOT . "/database/defaultCategories.json");
+  define("DATABASE_META_FILE_URL", ROOT . "/database/databaseMeta.json");
 
 
   function open_daily_server_log_file_stream()
@@ -30,7 +31,8 @@
     fwrite($fs, "\t\tUSERS_CARDS_FILE_URL: " . USERS_CARDS_FILE_URL . "\n");
     fwrite($fs, "\t\tUSERS_CATEGORIES_FILE_URL: " . USERS_CATEGORIES_FILE_URL . "\n");
     fwrite($fs, "\t\tDEFAULT_CARDS_FILE_URL: " . DEFAULT_CARDS_FILE_URL . "\n");
-    fwrite($fs, "\t\tDEFAULT_CATEGORIES_FILE_URL: " . DEFAULT_CATEGORIES_FILE_URL . "\n\n\n");
+    fwrite($fs, "\t\tDEFAULT_CATEGORIES_FILE_URL: " . DEFAULT_CATEGORIES_FILE_URL . "\n");
+    fwrite($fs, "\t\tDATABASE_META_FILE_URL: " . DATABASE_META_FILE_URL . "\n\n\n");
   }
 
   $serverLog = open_daily_server_log_file_stream();

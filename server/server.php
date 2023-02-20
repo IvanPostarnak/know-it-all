@@ -4,7 +4,7 @@
   require_once "server-util.php";
 
   global $serverLog;
-    fwrite($serverLog, "# ENTER index.php at: " . date("H-i-s") . "\n\n");
+    fwrite($serverLog, "# ENTER server.php at: " . date("H-i-s") . "\n\n");
 
   save_metadata_about_request($serverLog);
 
