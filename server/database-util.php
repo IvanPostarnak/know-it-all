@@ -24,21 +24,16 @@
     $databaseMetaJson = get_database_meta();
       fwrite($serverLog, "\t\t\tdatabaseMetaJson " . $databaseMetaJson . "\n");
     $databaseMetaArray = json_decode($databaseMetaJson, true);
-      fwrite($serverLog, "\t\t\tdatabaseMetaJson " . $databaseMetaArray . "\n");
-    $cardAsArray = json_decode($card, true);
 
-    $savingData = new stdClass();
-    $savingData -> {$databaseMetaArray['nextCardId']} = $cardAsArray;
-
-    $savingDataJson = json_encode($savingData);
-      fwrite($serverLog, "\t\t\tusers card data: " . $savingDataJson . "\n");
+    $savingData = "\"" . $databaseMetaArray['nextCardId'] . "\":" . $card;
+      fwrite($serverLog, "\t\t\tusers card data: " . $savingData . "\n");
     $databaseMetaArray['nextCardId'] += 1;
       fwrite($serverLog, "\t\t\tincrease 'nextCardId' of META by 1: " . $databaseMetaArray['nextCardId'] . "\n");
     $databaseMetaJSON = json_encode($databaseMetaArray);
       fwrite($serverLog, "\t\t\tdatabaseMetaJSON: " . $databaseMetaJSON . "\n");
     set_database_meta($databaseMetaJSON);
 
-    $status = file_put_contents(USERS_CARDS_FILE_URL, $savingDataJson . "\n", FILE_APPEND);
+    $status = file_put_contents(USERS_CARDS_FILE_URL, $savingData . "\n", FILE_APPEND);
       fwrite($serverLog, "\t\t\tsaving status: " . $status . "\n");
       fwrite($serverLog, "\t\t\texit: save_users_cards() function\n");
     
