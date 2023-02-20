@@ -87,10 +87,11 @@
       fwrite($serverLog, "\t\t\tenter: get_users_cards() function\n");
     
     $usersCards = file_get_contents(USERS_CARDS_FILE_URL);
-      // fwrite($serverLog, "\t\t\tUser's cards: " . $usersCards . "\n");
+    $str = substr($usersCards,0,-2);
+      // fwrite($serverLog, "\t\t\tUser's cards: " . $str . "\n");
       fwrite($serverLog, "\t\t\texit: get_users_cards() function\n");
     
-    return "{" . $usersCards . "}";
+    return "{" . $str . "}";
   }
 
   function get_default_cards()

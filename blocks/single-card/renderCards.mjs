@@ -1,14 +1,18 @@
 import getDefaultCardsFromDatabase from "./getCardsFromDatabase.mjs";
+import {getUsersCardsFromDatabase} from "./getCardsFromDatabase.mjs";
 
 export default async function renderCards() {
   let defaultCards = await getDefaultCardsFromDatabase();
+  let usersCards = await getUsersCardsFromDatabase();
+  let allCards = {};
+  Object.assign(allCards, usersCards, defaultCards);
 
   const cardsHolder = document.querySelector('.js-cards-holder');
   const singleHolders = document.querySelectorAll('.js-single-card-holder');
   const singleHoldersArray = Array.from(singleHolders);
 
   let nextToBeSet = 0;
-  for (let key in defaultCards) {
+  for (let key in allCards) {
     if (nextToBeSet === singleHoldersArray.length) {
       createSingleCardHolder(cardsHolder, singleHoldersArray);
     }
@@ -16,8 +20,8 @@ export default async function renderCards() {
   }
 
   nextToBeSet = 0;
-  for (let key in defaultCards) {
-    fillCardFolderWithSingleCard(singleHoldersArray[nextToBeSet], defaultCards[key], key);
+  for (let key in allCards) {
+    fillCardFolderWithSingleCard(singleHoldersArray[nextToBeSet], allCards[key], key);
     nextToBeSet++;
   }
   
@@ -70,7 +74,7 @@ function fillCardFolderWithSingleCard(holder, oneCard, key) {
   lang.textContent = oneCard['lang'];
 
   let time = cardStructure.querySelector('.single-card__time');
-  let timeString = `${oneCard.time['year']}-${oneCard.time['month']}-${oneCard.time['day']}T${oneCard.time['hour']}-${oneCard.time['minutes']}-${oneCard.time['seconds']}`;
+  let timeString = `${oneCard.time['year']}-${oneCard.time['month']}-${oneCard.time['day']}T${oneCard.time['hour']}:${oneCard.time['minutes']}:${oneCard.time['seconds']}`;
   let timeElement = document.createElement('time');
   timeElement.setAttribute('datetime', timeString);
   timeElement.textContent = `${oneCard.time['day']}.${oneCard.time['month']}.${oneCard.time['year']}`;

@@ -1,6 +1,6 @@
 export default async function addCardIntoDatabase(data) {
   let localObject = await JSON.parse(data);
-  localObject['lang'] = 'ru';
+  localObject['lang'] = 'en';
   localObject['type'] = 'users';
   let thisMoment = new Date();
   localObject['time'] = {
