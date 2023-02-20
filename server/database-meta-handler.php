@@ -21,6 +21,5 @@
     file_put_contents(DATABASE_META_FILE_URL, $data);
 
       fwrite($serverLog, "\t\t\t\texit: set_meta_database() function\n");
-    return $metaString;
   }
 ?>

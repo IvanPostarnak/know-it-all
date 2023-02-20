@@ -27,11 +27,21 @@
 
     $savingData = "\"" . $databaseMetaArray['nextCardId'] . "\":" . $card;
       fwrite($serverLog, "\t\t\tusers card data: " . $savingData);
+    
+    $workingArrayOfData = json_decode($card, true);
+    $addingMainCategory = $workingArrayOfData['main-category'];
+    $addingAdditionalCategory = $workingArrayOfData['additional-category'];
      
     $databaseMetaArray['nextCardId'] += 1;
       fwrite($serverLog, "\t\t\t\tincrease 'nextCardId' of META by 1: " . $databaseMetaArray['nextCardId'] . "\n");
     $databaseMetaArray['usersCards'] += 1;
       fwrite($serverLog, "\t\t\t\tincrease 'usersCards' of META by 1: " . $databaseMetaArray['usersCards'] . "\n");
+    $databaseMetaArray[$addingMainCategory] += 1;
+      fwrite($serverLog, "\t\t\t\tincrease ". $addingMainCategory . " of META by 1: " . $databaseMetaArray[$addingMainCategory] . "\n");
+    if($addingAdditionalCategory != "") {
+      $databaseMetaArray[$addingAdditionalCategory] += 1;
+        fwrite($serverLog, "\t\t\t\tincrease " . $addingAdditionalCategory. " of META by 1: " . $databaseMetaArray[$addingAdditionalCategory] . "\n");
+    }
     $databaseMetaJSON = json_encode($databaseMetaArray);
       fwrite($serverLog, "\t\t\tdatabaseMetaJSON: " . $databaseMetaJSON . "\n");
     set_database_meta($databaseMetaJSON);
