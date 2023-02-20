@@ -1,6 +1,6 @@
 import getDefaultCardsFromDatabase from "./getCardsFromDatabase.mjs";
 
-export default async function addCards() {
+export default async function renderCards() {
   let defaultCards = await getDefaultCardsFromDatabase();
 
   const cardsHolder = document.querySelector('.js-cards-holder');
@@ -70,7 +70,7 @@ function fillCardFolderWithSingleCard(holder, oneCard, key) {
   lang.textContent = oneCard['lang'];
 
   let time = cardStructure.querySelector('.single-card__time');
-  let timeString = `${oneCard.time['year']}-${oneCard.time['month']}-${oneCard.time['day']}-${oneCard.time['hour']}-${oneCard.time['minutes']}-${oneCard.time['seconds']}`;
+  let timeString = `${oneCard.time['year']}-${oneCard.time['month']}-${oneCard.time['day']}T${oneCard.time['hour']}-${oneCard.time['minutes']}-${oneCard.time['seconds']}`;
   let timeElement = document.createElement('time');
   timeElement.setAttribute('datetime', timeString);
   timeElement.textContent = `${oneCard.time['day']}.${oneCard.time['month']}.${oneCard.time['year']}`;

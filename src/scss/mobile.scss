@@ -24,8 +24,8 @@
 	&--slide-intro {
     @include linear-gradient(
       0deg, 
-      rgba(0,18,255,1) 0%, 
-      rgba(0,255,239,1) 100%);
+      rgba(0,255,239,1) 0%, 
+      rgba(0,18,255,1) 100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -35,8 +35,8 @@
     height: auto;
     @include linear-gradient(
       180deg,
-      rgba(0,18,255,1) 0%,
-      rgba(0,255,239,1) 100%);
+      rgba(0,255,239,1) 0%,
+      rgba(0,18,255,1) 100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

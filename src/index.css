@@ -477,22 +477,22 @@
   align-items: center;
 }
 .slide--slide-intro {
-  background-image: -webkit-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -moz-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -ms-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -o-linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: linear-gradient(0deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -webkit-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: -moz-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: -ms-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: -o-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .slide--slide-cards {
   height: auto;
-  background-image: -webkit-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -moz-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -ms-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: -o-linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
-  background-image: linear-gradient(180deg, rgb(0, 18, 255) 0%, rgb(0, 255, 239) 100%);
+  background-image: -webkit-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: -moz-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: -ms-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: -o-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
+  background-image: linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
