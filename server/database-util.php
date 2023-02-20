@@ -22,14 +22,14 @@
       // fwrite($serverLog, "\t\t\tsaving card: " . $card . "\n");
 
     $databaseMetaJson = get_database_meta();
-      fwrite($serverLog, "\t\t\tdatabaseMetaJson" . $databaseMetaJson . "\n");
+      fwrite($serverLog, "\t\t\tdatabaseMetaJson " . $databaseMetaJson . "\n");
     $databaseMetaArray = json_decode($databaseMetaJson, true);
-      fwrite($serverLog, "\t\t\tdatabaseMetaJson" . $databaseMetaArray . "\n");
+      fwrite($serverLog, "\t\t\tdatabaseMetaJson " . $databaseMetaArray . "\n");
     $cardAsArray = json_decode($card, true);
-      //fwrite($serverLog, "\t\t\tcardAsArray$cardAsArray" . $cardAsArray . "\n");
+
     $savingData = new stdClass();
     $savingData -> {$databaseMetaArray['nextCardId']} = $cardAsArray;
-      //fwrite($serverLog, "\t\t\tsavingData" . $savingData . "\n");
+
     $savingDataJson = json_encode($savingData);
       fwrite($serverLog, "\t\t\tusers card data: " . $savingDataJson . "\n");
     $databaseMetaArray['nextCardId'] += 1;
