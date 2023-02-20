@@ -87,7 +87,7 @@ function fillCardFolderWithSingleCard(holder, oneCard, key) {
   mainCategory.textContent = oneCard['main-category'];
 
   let additionalCategories = cardStructure.querySelector('.single-card__additional-categories');
-  additionalCategories.textContent = oneCard['additional-categories'];
+  additionalCategories.textContent = oneCard['additional-category'];
 
   holder.append(cardStructure);
 }

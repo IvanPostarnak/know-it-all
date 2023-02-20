@@ -82,6 +82,7 @@
 
   &__categories {
     text-align: end;
+    width: 45%;
   }
 
   &__main-category-wrapper {
@@ -103,6 +104,7 @@
 
   &__metadata {
     text-align: start;
+    width: 45%;
   }
 
   &__time {
@@ -121,6 +123,7 @@
   }
 
   &__id {
-    
+    width: 10%;
+    text-align: center;
   }
 }

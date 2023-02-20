@@ -432,6 +432,7 @@
 }
 .single-card__categories {
   text-align: end;
+  width: 45%;
 }
 .single-card__main-category {
   font-family: "JetBrains Mono", monospace;
@@ -446,6 +447,7 @@
 }
 .single-card__metadata {
   text-align: start;
+  width: 45%;
 }
 .single-card__time {
   display: block;
@@ -459,6 +461,11 @@
   display: block;
   cursor: pointer;
 }
+.single-card__id {
+  width: 10%;
+  text-align: center;
+}
+
 .container {
   width: 100%;
   height: 100vh;
