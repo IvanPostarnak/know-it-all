@@ -239,14 +239,43 @@
   opacity: 0.5;
 }
 
+:root {
+  font-family: "Share Tech Mono", "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2rem;
+  color: #000000;
+  scroll-behavior: smooth;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body-of-the-page {
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+}
+
 .bubble {
   width: 100%;
   height: 100%;
-  max-width: 1vw;
-  max-height: 1vw;
+  max-width: 1vmax;
+  max-height: 1vmax;
   border-radius: 50%;
   background-color: red;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 5;
 }
 .bubble--big-size {
