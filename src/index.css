@@ -130,6 +130,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1000;
 }
 
 .add-card-form {
@@ -143,7 +145,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  position: relative;
+  z-index: 1000;
 }
 .add-card-form__input-question {
   display: block;
@@ -271,7 +274,6 @@
   height: 100%;
   max-width: 1vmax;
   max-height: 1vmax;
-  border-radius: 50%;
   background-color: red;
   position: absolute;
   top: 0;

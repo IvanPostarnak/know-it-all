@@ -1,7 +1,7 @@
 export default function bubbleGlide() {
+  const bubble = document.querySelector('.js-bubble');
   const screenWidth = document.documentElement.clientWidth;
   const screenHeight = document.documentElement.clientHeight;
-  const bubble = document.querySelector('.js-bubble');
 
   let vector = {
     x: 1,
@@ -14,8 +14,8 @@ export default function bubbleGlide() {
      // change direction
     if (x < 0) vector.x *= -1
     if (y < 0) vector.y *= -1
-    if (x > screenWidth) vector.x *= -1
-    if (y > screenHeight) vector.y *= -1
+    if (x > screenWidth - bubble.offsetWidth) vector.x *= -1
+    if (y > screenHeight - bubble.offsetHeight) vector.y *= -1
   
     bubble.style.left = x + vector.x + 'px'
     bubble.style.top = y + vector.y + 'px'
