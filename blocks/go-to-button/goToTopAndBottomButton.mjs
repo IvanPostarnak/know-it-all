@@ -6,13 +6,11 @@ export default function goToTopAndBottomButton() {
   goToButton.addEventListener('click', () => {
     if (destination === "bot") {
       window.scrollTo(0 , bottomCoordinates);
-      goToButton.classList.remove("go-to-top-and-bottom-button--bot");
-      goToButton.classList.add("go-to-top-and-bottom-button--top");
+      goToButton.style.transform = "rotate(180deg)";
       destination = "top"
     } else if (destination === "top") {
       window.scrollTo(0 , 0);
-      goToButton.classList.remove("go-to-top-and-bottom-button--top");
-      goToButton.classList.add("go-to-top-and-bottom-button--bot");
+      goToButton.style.transform = "rotate(0deg)";
       destination = "bot"
     }
   });
