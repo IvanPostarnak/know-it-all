@@ -2,82 +2,85 @@
 <!-- @author: https://github.com/IvanPostarnak https://vk.com/ivanpostarnak -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Ivan Postarnak">
-  <meta name="description" content="Web page to fill the database up">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-  <link rel="stylesheet" href="./src/index.css">
-  <title>Know It All</title>
-</head>
-<body class="body-of-the-page">
-  <section class="container">
-    <div class="slide slide--slide-intro">
-      <div class="slide__inner slide__inner--slide-intro">
-        <h1 class="slide__title slide__title--slide-intro">Know it all</h1>
-        <div class="form-holder">
-          <form class="add-card-form js-cardForm"
-                name="addNewCardForm"
-                id="addNewCard">
-            <input class="add-card-form__input-question"
-                    name="question"
-                    type="text"
-                    placeholder="question"
-                    tabindex="1"
-                    required>
-            <textarea class="add-card-form__textarea-answer"
-                    name="answer"
-                    type="text"
-                    placeholder="answer"
-                    tabindex="2"
-                    required></textarea>
-            <div class="add-card-form__select-holder js-select-holder">
-              <div id="" class="one-field-preloader">
-                <div class="loadingio-spinner-pulse-ckjnjglaokr">
-                  <div class="ldio-l70we991ur">
-                    <div></div><div></div><div></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ivan Postarnak">
+    <meta name="description" content="Web page to fill the database up">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./src/index.css">
+    <title>Know It All</title>
+  </head>
+  <body class="body-of-the-page">
+    <section class="container">
+      <div class="slide slide--slide-intro">
+        <div class="slide__inner slide__inner--slide-intro">
+          <h1 class="slide__title slide__title--slide-intro">Know it all</h1>
+          <div class="form-holder">
+            <form class="add-card-form js-cardForm"
+                  name="addNewCardForm"
+                  id="addNewCard">
+              <input class="add-card-form__input-question"
+                      name="question"
+                      type="text"
+                      placeholder="question"
+                      tabindex="1"
+                      required>
+              <textarea class="add-card-form__textarea-answer"
+                      name="answer"
+                      type="text"
+                      placeholder="answer"
+                      tabindex="2"
+                      required></textarea>
+              <div class="add-card-form__select-holder js-select-holder">
+                <div id="" class="one-field-preloader">
+                  <div class="loadingio-spinner-pulse-ckjnjglaokr">
+                    <div class="ldio-l70we991ur">
+                      <div></div><div></div><div></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="add-card-form__select-holder js-select-holder">
-              <div class="one-field-preloader">
-                <div class="loadingio-spinner-pulse-ckjnjglaokr">
-                  <div class="ldio-l70we991ur">
-                    <div></div><div></div><div></div>
+              <div class="add-card-form__select-holder js-select-holder">
+                <div class="one-field-preloader">
+                  <div class="loadingio-spinner-pulse-ckjnjglaokr">
+                    <div class="ldio-l70we991ur">
+                      <div></div><div></div><div></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <button class="add-card-form__submit-button"
-                    type="submit">
-                    Save card
-            </button>
-          </form>
+              <button class="add-card-form__submit-button"
+                      type="submit">
+                      Save card
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <main class="container container--slide-cards">
-    <div class="slide slide--slide-cards">
-      <div class="slide__inner slide__inner--slide-cards js-cards-holder">
-        <div class="single-card-holder js-single-card-holder">
-          <div class="single-card-preloader">
-            <div class="loadingio-spinner-pulse-if2u0pyqwxs">
-              <div class="ldio-nxtxow40e7">
-                <div></div><div></div><div></div>
+    <main class="container container--slide-cards">
+      <div class="slide slide--slide-cards">
+        <div class="slide__inner slide__inner--slide-cards js-cards-holder">
+          <div class="single-card-holder js-single-card-holder">
+            <div class="single-card-preloader">
+              <div class="loadingio-spinner-pulse-if2u0pyqwxs">
+                <div class="ldio-nxtxow40e7">
+                  <div></div><div></div><div></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-  <script type="module" src="./scripts/main.js"></script>
+    </main>
+
+    <button class="go-to-top-and-bottom-button js-go-top-and-bottom-button"></button>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
 </html>

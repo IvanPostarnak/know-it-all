@@ -5,7 +5,7 @@ export default async function addCardIntoDatabase(data) {
   let thisMoment = new Date();
   localObject['time'] = {
     year: thisMoment.getFullYear(),
-    month: thisMoment.getMonth(),
+    month: thisMoment.getMonth() + 1,
     day: thisMoment.getDate(),
     weekDay: thisMoment.getDay(),
     hour: thisMoment.getHours(),

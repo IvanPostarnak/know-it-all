@@ -4,6 +4,7 @@
   font-size: 10px;
   line-height: 1.2rem;
   color: #000000;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -531,6 +532,17 @@
   line-height: 1em;
   color: #ffffff;
   word-spacing: -10px;
+}
+.go-to-top-and-bottom-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 1000;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
