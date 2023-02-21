@@ -467,6 +467,45 @@
   text-align: center;
 }
 
+:root {
+  font-family: "Share Tech Mono", "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2rem;
+  color: #000000;
+  scroll-behavior: smooth;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body-of-the-page {
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+}
+
+.go-to-top-and-bottom-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 1000;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -532,17 +571,6 @@
   line-height: 1em;
   color: #ffffff;
   word-spacing: -10px;
-}
-.go-to-top-and-bottom-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 25px;
-  background-color: #000000;
-  color: #ffffff;
-  z-index: 1000;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
