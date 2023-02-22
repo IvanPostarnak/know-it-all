@@ -1,7 +1,7 @@
 export default async function filterCards() {
   let metaObject = await getMetaOfDatabase();
 
-  const shownArrayOfCards = document.querySelectorAll('.js-single-card-holder');
+  let shownArrayOfCards = Array.from(document.querySelectorAll('.js-single-card-holder'));
   const arrayOfCards = [...shownArrayOfCards];
   console.log(shownArrayOfCards);
   console.log(arrayOfCards);
@@ -18,15 +18,17 @@ export default async function filterCards() {
 
   defaultCardsCheckbox.addEventListener('change', () => {
     if (defaultCardsCheckbox.checked) {
-      arrayOfCards.forEach(card => {
+      shownArrayOfCards.forEach(card => {
         if (card.querySelector('.single-card__type').textContent === "default") {
-          shownArrayOfCards.append(card);
+          card.style.display = "block";
+          card.style.visibility = "visible";
         }
       })
     } else {
       shownArrayOfCards.forEach(card => {
         if (card.querySelector('.single-card__type').textContent === "default") {
-          card.remove();
+          card.style.display = "none";
+          card.style.visibility = "hidden";
         }
       })
     }
