@@ -1,6 +1,5 @@
 export default async function filterCards() {
   let metaObject = await getMetaOfDatabase();
-  const [defaultCategories, defaultCards, usersCategories, usersCards, nextCardId, ...categories] = metaObject;
 
   const arrayOfCards = Array.from(document.querySelectorAll('.single-card'));
   console.log(arrayOfCards);

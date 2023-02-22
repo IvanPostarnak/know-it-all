@@ -36,10 +36,10 @@
       fwrite($serverLog, "\t\t\t\tincrease 'nextCardId' of META by 1: " . $databaseMetaArray['nextCardId'] . "\n");
     $databaseMetaArray['usersCards'] += 1;
       fwrite($serverLog, "\t\t\t\tincrease 'usersCards' of META by 1: " . $databaseMetaArray['usersCards'] . "\n");
-    $databaseMetaArray[$addingMainCategory] += 1;
+    $databaseMetaArray['categories'][$addingMainCategory] += 1;
       fwrite($serverLog, "\t\t\t\tincrease ". $addingMainCategory . " of META by 1: " . $databaseMetaArray[$addingMainCategory] . "\n");
     if($addingAdditionalCategory != "") {
-      $databaseMetaArray[$addingAdditionalCategory] += 1;
+      $databaseMetaArray['categories'][$addingAdditionalCategory] += 1;
         fwrite($serverLog, "\t\t\t\tincrease " . $addingAdditionalCategory. " of META by 1: " . $databaseMetaArray[$addingAdditionalCategory] . "\n");
     }
     $databaseMetaJSON = json_encode($databaseMetaArray);
