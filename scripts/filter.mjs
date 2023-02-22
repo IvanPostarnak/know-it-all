@@ -57,15 +57,20 @@ export default async function filterCards() {
     let choice = selectCategoryFilter.value;
     console.log(choice);
     shownArrayOfCards.forEach(card => {
-      if (
-        card.querySelector('.single-card__main-category').textContent === choice
-        || card.querySelector('.single-card__additional-categories').textContent === choice
-      ) {
+      if (choice === "All") {
         card.style.display = "block";
         card.style.visibility = "visible";
       } else {
-        card.style.display = "none";
-        card.style.visibility = "hidden";
+        if (
+          card.querySelector('.single-card__main-category').textContent === choice
+          || card.querySelector('.single-card__additional-categories').textContent === choice
+        ) {
+          card.style.display = "block";
+          card.style.visibility = "visible";
+        } else {
+          card.style.display = "none";
+          card.style.visibility = "hidden";
+        }
       }
     });
   });

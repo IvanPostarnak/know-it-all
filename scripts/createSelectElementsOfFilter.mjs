@@ -4,13 +4,23 @@ export default async function createSelectElementsOfFilter(categories) {
   const selectPlaceholder = createSelectPlaceholder();
   select.append(selectPlaceholder);
 
+  let all = 0;
+  let option;
+
   for (let key in categories) {
-    let option = document.createElement('option');
+    option = document.createElement('option');
     option.value = key;
     option.text = `${key} (${categories[key]})`;
+    all += categories[key];
     option.classList.add('add-card-form__select-item');
     select.append(option);
   }
+
+  option = document.createElement('option');
+  option.value = "All";
+  option.text = `All (${all})`;
+  option.classList.add('add-card-form__select-item');
+  select.append(option);
 
   arrayOfSelectHolderInFilter.textContent = '';
   arrayOfSelectHolderInFilter.append(select);
