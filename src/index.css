@@ -511,6 +511,9 @@
 .container--slide-cards {
   height: auto;
 }
+.container--slide-filter {
+  height: 50vh;
+}
 
 .slide {
   width: 100%;
