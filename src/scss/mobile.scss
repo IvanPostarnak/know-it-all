@@ -46,8 +46,16 @@
     background-size: cover;
   }
 
-  &--slide-fiter {
-
+  &--slide-filter {
+    flex-direction: column;
+    @include linear-gradient(
+      45deg,
+      #db83d1 0%,
+      #e6bde9 100%);
+    color: $white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   &__inner {
@@ -67,6 +75,12 @@
 
     &--slide-cards {
       @include min-width-and-height(320px, 470px);
+    }
+
+    &--slide-filter {
+      @include min-width-and-height(320px, 360px);
+      @include max-width-and-height(60vw, 80vh);
+      padding: 20px;
     }
   }
 

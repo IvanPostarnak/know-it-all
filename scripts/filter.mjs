@@ -1,5 +1,10 @@
+import getMetaOfDatabase from "./getMetaOfDatabase.mjs";
+import createSelectElementsOfFilter from "./createSelectElementsOfFilter.mjs";
+
 export default async function filterCards() {
   let metaObject = await getMetaOfDatabase();
+
+  createSelectElementsOfFilter(metaObject['categories']);
 
   let shownArrayOfCards = Array.from(document.querySelectorAll('.js-single-card-holder'));
   const arrayOfCards = [...shownArrayOfCards];
@@ -44,10 +49,4 @@ export default async function filterCards() {
       })
     }
   })
-}
-
-async function getMetaOfDatabase() {
-  const response = await fetch("/server/server.php?meta=1");
-  const data = await response.json();
-  return data;
 }
