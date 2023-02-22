@@ -46,7 +46,11 @@
         $databaseManagerResponse = get_data("categories", $_GET["categories"]);
         break;
       case false:
-        $databaseManagerResponse = get_data("cards", $_GET["cards"]);
+        if (isset($_GET["cards"])) {
+          $databaseManagerResponse = get_data("cards", $_GET["cards"]);
+        } else {
+          $databaseManagerResponse = get_data("meta", $_GET["meta"]);
+        }
         break;
       default:
         $databaseManagerResponse = null;

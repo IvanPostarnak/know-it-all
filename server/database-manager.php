@@ -58,6 +58,10 @@
     } else if ($getParameter === "cards" &&  $parameterValue === "users&default") {
   
       $response = get_users_and_default_cards();
+
+    } else if ($getParameter === "meta" &&  $parameterValue === "1") {
+      
+      $response = get_database_meta();
   
     } else {
   
