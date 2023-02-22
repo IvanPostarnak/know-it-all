@@ -18,11 +18,6 @@ export default async function renderCards() {
     if (nextToBeSet === singleHoldersArray.length) {
       createSingleCardHolder(cardsHolder, singleHoldersArray);
     }
-    nextToBeSet++;
-  }
-
-  nextToBeSet = 0;
-  for (let key in allCards) {
     fillCardFolderWithSingleCard(singleHoldersArray[nextToBeSet], allCards[key], key);
     nextToBeSet++;
   }
