@@ -19,7 +19,7 @@ export default async function createSelectElementsOfFilter(categories) {
 
 function createSelect() {
   let select = document.createElement('select');
-  select.classList.add('add-card-form__select-field');
+  select.classList.add('add-card-form__select-field', 'js-category-filter');
   select.setAttribute('name', 'chooseCategory');
   return select;
 }

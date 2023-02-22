@@ -574,6 +574,7 @@
   padding: 20px;
 }
 .slide__inner--slide-cards {
+  padding: 10px 0;
   min-width: 320px;
   min-height: 470px;
 }

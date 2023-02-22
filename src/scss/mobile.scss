@@ -74,6 +74,7 @@
     }
 
     &--slide-cards {
+      padding: 10px 0;
       @include min-width-and-height(320px, 470px);
     }
 

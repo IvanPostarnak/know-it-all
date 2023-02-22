@@ -4,10 +4,10 @@ import createSelectElementsOfFilter from "./createSelectElementsOfFilter.mjs";
 export default async function filterCards() {
   let metaObject = await getMetaOfDatabase();
 
-  createSelectElementsOfFilter(metaObject['categories']);
+  await createSelectElementsOfFilter(metaObject['categories']);
 
   let shownArrayOfCards = Array.from(document.querySelectorAll('.js-single-card-holder'));
-  const arrayOfCards = [...shownArrayOfCards];
+  // const arrayOfCards = [...shownArrayOfCards];
   console.log(shownArrayOfCards);
 
 
@@ -30,6 +30,7 @@ export default async function filterCards() {
         }
       })
     }
+    console.log(shownArrayOfCards);
   })
 
   usersCardsCheckbox.addEventListener('change', () => {
@@ -48,5 +49,24 @@ export default async function filterCards() {
         }
       })
     }
+    console.log(shownArrayOfCards);
   })
+
+  const selectCategoryFilter = document.querySelector('.js-category-filter');
+  selectCategoryFilter.addEventListener('change', elem => {
+    let choice = selectCategoryFilter.value;
+    console.log(choice);
+    shownArrayOfCards.forEach(card => {
+      if (
+        card.querySelector('.single-card__main-category').textContent === choice
+        || card.querySelector('.single-card__additional-categories').textContent === choice
+      ) {
+        card.style.display = "block";
+        card.style.visibility = "visible";
+      } else {
+        card.style.display = "none";
+        card.style.visibility = "hidden";
+      }
+    });
+  });
 }
