@@ -40,20 +40,20 @@ export default async function filterCards() {
 
   usersCardsCheckbox.addEventListener('change', () => {
     if (usersCardsCheckbox.checked) {
-      shownArrayOfCards.forEach(card => {
+      hiddenCards.forEach(card => {
         if (card.querySelector('.single-card__type').textContent === "users") {
-          card.style.display = "block";
-          card.style.visibility = "visible";
+          cardsHolder.prepend(card);
         }
       })
     } else {
       shownArrayOfCards.forEach(card => {
         if (card.querySelector('.single-card__type').textContent === "users") {
-          card.style.display = "none";
-          card.style.visibility = "hidden";
+          trashbox.prepend(card);
         }
       })
     }
+    shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
+    hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
     console.log(shownArrayOfCards);
     console.log(hiddenCards);
   })
@@ -79,6 +79,8 @@ export default async function filterCards() {
         }
       }
     });
+    shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
+    hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
     console.log(shownArrayOfCards);
     console.log(hiddenCards);
   });
