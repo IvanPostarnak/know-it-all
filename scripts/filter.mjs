@@ -6,9 +6,13 @@ export default async function filterCards() {
 
   await createSelectElementsOfFilter(metaObject['categories']);
 
-  let shownArrayOfCards = Array.from(document.querySelectorAll('.js-single-card-holder'));
-  // const arrayOfCards = [...shownArrayOfCards];
+  let cardsHolder = document.querySelector('.js-cards-holder');
+  let shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
+  // let shownArrayOfCards = document.querySelectorAll('.js-single-card-holder');
+  let trashbox = document.querySelector('.js-trash-box');
+  let hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
   console.log(shownArrayOfCards);
+  console.log(hiddenCards);
 
 
   const defaultCardsCheckbox = document.querySelector('.js-default-type');
@@ -16,21 +20,22 @@ export default async function filterCards() {
 
   defaultCardsCheckbox.addEventListener('change', () => {
     if (defaultCardsCheckbox.checked) {
-      shownArrayOfCards.forEach(card => {
+      hiddenCards.forEach(card => {
         if (card.querySelector('.single-card__type').textContent === "default") {
-          card.style.display = "block";
-          card.style.visibility = "visible";
+          cardsHolder.prepend(card);
         }
       })
     } else {
       shownArrayOfCards.forEach(card => {
         if (card.querySelector('.single-card__type').textContent === "default") {
-          card.style.display = "none";
-          card.style.visibility = "hidden";
+          trashbox.prepend(card);
         }
       })
     }
+    shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
+    hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
     console.log(shownArrayOfCards);
+    console.log(hiddenCards);
   })
 
   usersCardsCheckbox.addEventListener('change', () => {
@@ -50,6 +55,7 @@ export default async function filterCards() {
       })
     }
     console.log(shownArrayOfCards);
+    console.log(hiddenCards);
   })
 
   const selectCategoryFilter = document.querySelector('.js-category-filter');
@@ -73,5 +79,7 @@ export default async function filterCards() {
         }
       }
     });
+    console.log(shownArrayOfCards);
+    console.log(hiddenCards);
   });
 }

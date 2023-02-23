@@ -593,5 +593,10 @@
   color: #ffffff;
   word-spacing: -10px;
 }
+.trash-box {
+  display: none;
+  visibility: hidden;
+  overflow: hidden;
+}
 
 /*# sourceMappingURL=index.css.map */
