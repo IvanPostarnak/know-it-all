@@ -1,15 +1,14 @@
-export default function createSingleCardHolder(appendTo, arrayOfHolders) {
+export default function createSingleCardHolder() {
   let cardHolder = document.createElement('div');
   cardHolder.classList.add('single-card-holder', 'js-single-card-holder');
 
   let cardPreloader = createCardPreloaderElement();
   cardHolder.append(cardPreloader);
 
-  appendTo.append(cardHolder);
-  arrayOfHolders.push(cardHolder);
+  return cardHolder;
 }
 
-export function createCardPreloaderElement() {
+function createCardPreloaderElement() {
   let cardPreloader = document.createElement('div');
   cardPreloader.classList.add('single-card-preloader');
 

@@ -10,15 +10,16 @@ export default async function renderCards() {
   Object.assign(allCards, usersCards, defaultCards);
 
   const cardsHolder = document.querySelector('.js-cards-holder');
-  const singleHolders = document.querySelectorAll('.js-single-card-holder');
-  const singleHoldersArray = Array.from(singleHolders);
+  const singleHoldersArray = Array.from(document.querySelectorAll('.js-single-card-holder'));
 
   let nextToBeSet = 0;
   for (let key in allCards) {
     if (nextToBeSet === singleHoldersArray.length) {
-      createSingleCardHolder(cardsHolder, singleHoldersArray);
+      let singleCardHolder = createSingleCardHolder();
+      cardsHolder.prepend(singleCardHolder);
+      singleHoldersArray.unshift(singleCardHolder);
     }
-    fillCardFolderWithSingleCard(singleHoldersArray[nextToBeSet], allCards[key], key);
+    fillCardFolderWithSingleCard(singleHoldersArray[0], allCards[key], key);
     nextToBeSet++;
   }
 }
