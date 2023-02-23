@@ -21,7 +21,11 @@ export default async function filterCards() {
   defaultCardsCheckbox.addEventListener('change', () => {
     if (defaultCardsCheckbox.checked) {
       hiddenCards.forEach(card => {
-        if (card.querySelector('.single-card__type').textContent === "default") {
+        if (
+          card.querySelector('.single-card__type').textContent === "default"
+          && (card.querySelector('.single-card__main-category').textContent === document.querySelector('.js-category-filter').value
+          || card.querySelector('.single-card__additional-categories').textContent === document.querySelector('.js-category-filter').value)
+        ) {
           cardsHolder.prepend(card);
         }
       })
@@ -41,7 +45,11 @@ export default async function filterCards() {
   usersCardsCheckbox.addEventListener('change', () => {
     if (usersCardsCheckbox.checked) {
       hiddenCards.forEach(card => {
-        if (card.querySelector('.single-card__type').textContent === "users") {
+        if (
+          card.querySelector('.single-card__type').textContent === "users"
+          && (card.querySelector('.single-card__main-category').textContent === document.querySelector('.js-category-filter').value
+          || card.querySelector('.single-card__additional-categories').textContent === document.querySelector('.js-category-filter').value)
+        ) {
           cardsHolder.prepend(card);
         }
       })
