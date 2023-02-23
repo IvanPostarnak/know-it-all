@@ -1,8 +1,28 @@
 export default function isAppropriateCard(card) {
+  inputSearchVerdict(card);
   return (
-    defaultCardVerdict(card) && selectCardVerdict(card) 
-    || usersCardVerdict(card) && selectCardVerdict(card)
+    defaultCardVerdict(card) && selectCardVerdict(card) && inputSearchVerdict(card)
+    || usersCardVerdict(card) && selectCardVerdict(card) && inputSearchVerdict(card)
   );
+}
+
+function inputSearchVerdict(card) {
+  const inputSearchFilter = document.querySelector('.js-filter-search');
+  let request = inputSearchFilter.value.trim().toLowerCase();
+  let textOfCard 
+    = card.querySelector('.single-card__question').innerText 
+    + card.querySelector('.single-card__answer').innerText;
+  // console.log(request);
+  // console.log(textOfCard);
+  let verdict = false;
+
+  if (request === "") {
+    verdict = true;
+  } else if (textOfCard.toLowerCase().includes(request)) {
+    verdict = true;
+  }
+
+  return verdict;
 }
 
 function defaultCardVerdict(card) {

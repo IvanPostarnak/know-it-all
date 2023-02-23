@@ -14,9 +14,20 @@ export default async function filterCards() {
   // console.log(shownArrayOfCards);
   // console.log(hiddenCards);
 
+  const inputSearchFilter = document.querySelector('.js-filter-search');
   const defaultCardsCheckbox = document.querySelector('.js-default-type');
   const usersCardsCheckbox = document.querySelector('.js-users-type');
   const selectCategoryFilter = document.querySelector('.js-category-filter');
+  const resetButton = document.querySelector('.js-reset-filter-button');
+
+  inputSearchFilter.addEventListener('input', () => {
+    filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+
+    shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
+    hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
+    // console.log(shownArrayOfCards);
+    // console.log(hiddenCards);
+  })
 
   defaultCardsCheckbox.addEventListener('change', () => {
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
@@ -46,9 +57,8 @@ export default async function filterCards() {
     // console.log(hiddenCards);
   });
 
-  const resetButton = document.querySelector('.js-reset-filter-button');
-
   resetButton.addEventListener('click', () => {
+    inputSearchFilter.value = "";
     defaultCardsCheckbox.checked = "true";
     usersCardsCheckbox.checked = "true";
     selectCategoryFilter.selectedIndex = 0;
