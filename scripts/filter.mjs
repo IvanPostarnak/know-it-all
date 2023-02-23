@@ -19,21 +19,7 @@ export default async function filterCards() {
   const selectCategoryFilter = document.querySelector('.js-category-filter');
 
   defaultCardsCheckbox.addEventListener('change', () => {
-    if (shownArrayOfCards.length) {
-      shownArrayOfCards.forEach(card => {
-        if (isAppropriateCard(card) === false) {
-          trashbox.prepend(card);
-        }
-      })
-    }
-    
-    if (hiddenCards.length) {
-      hiddenCards.forEach(card => {
-        if (isAppropriateCard(card) === true) {
-          cardsHolder.prepend(card);
-        }
-      })
-    }  
+    filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
       
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
@@ -42,45 +28,18 @@ export default async function filterCards() {
   })
 
   usersCardsCheckbox.addEventListener('change', () => {
-    if (shownArrayOfCards.length) {
-      shownArrayOfCards.forEach(card => {
-        if (isAppropriateCard(card) === false) {
-          trashbox.prepend(card);
-        }
-      })
-    }
-    
-    if (hiddenCards.length) {
-      hiddenCards.forEach(card => {
-        if (isAppropriateCard(card) === true) {
-          cardsHolder.prepend(card);
-        }
-      })
-    } 
+    filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   })
 
-  selectCategoryFilter.addEventListener('change', elem => {
-    let choice = selectCategoryFilter.value;
-    console.log(choice);
-    if (shownArrayOfCards.length) {
-      shownArrayOfCards.forEach(card => {
-        if (isAppropriateCard(card) === false) {
-          trashbox.prepend(card);
-        }
-      })
-    }
-    
-    if (hiddenCards.length) {
-      hiddenCards.forEach(card => {
-        if (isAppropriateCard(card) === true) {
-          cardsHolder.prepend(card);
-        }
-      })
-    } 
+  selectCategoryFilter.addEventListener('change', () => {
+
+    filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
     // console.log(shownArrayOfCards);
@@ -94,20 +53,24 @@ export default async function filterCards() {
     usersCardsCheckbox.checked = "true";
     selectCategoryFilter.selectedIndex = 0;
 
-    if (shownArrayOfCards.length) {
-      shownArrayOfCards.forEach(card => {
-        if (isAppropriateCard(card) === false) {
-          trashbox.prepend(card);
-        }
-      })
-    }
-    
-    if (hiddenCards.length) {
-      hiddenCards.forEach(card => {
-        if (isAppropriateCard(card) === true) {
-          cardsHolder.prepend(card);
-        }
-      })
-    }
+    filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
   });
+}
+
+function filteredRender(shownArr, hiddenArr, render, trashbox) {
+  if (shownArr.length) {
+    shownArr.forEach(card => {
+      if (isAppropriateCard(card) === false) {
+        trashbox.prepend(card);
+      }
+    })
+  }
+  
+  if (hiddenArr.length) {
+    hiddenArr.forEach(card => {
+      if (isAppropriateCard(card) === true) {
+        render.prepend(card);
+      }
+    })
+  }
 }
