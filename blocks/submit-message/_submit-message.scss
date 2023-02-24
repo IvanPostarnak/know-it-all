@@ -10,9 +10,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 10px;
-  right: 10px;
+  right: -175px;
 
   &--success {
     border-color: #376335;
@@ -41,9 +41,4 @@
       color: #8C3343;
     }
   }
-}
-
-.hidden {
-  visibility: hidden;
-  display: none;
 }

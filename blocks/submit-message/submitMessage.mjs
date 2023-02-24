@@ -6,9 +6,37 @@ export default async function appearAndRemoveSubmitMessage(state) {
     message = document.querySelector('.js-submit-error-message');
     message.querySelector('p').textContent = `${state}`;
   }
- 
-  message.classList.remove('hidden');
-  // setTimeout(() => {
-  //   message.classList.add('hidden');
-  // }, 3000);
+
+  const submitRectangle = message.getBoundingClientRect();
+  const startedOffset = submitRectangle.left;
+  const screenWidth = document.documentElement.clientWidth;
+  const targetLeftOffset = screenWidth - submitRectangle.width - 10;
+
+  let timerAppear = setInterval(() => {
+    const {left: x} = message.getBoundingClientRect();
+    if (x <= targetLeftOffset) {
+      clearInterval(timerAppear);
+      return;
+    }
+    let offset = x - 1 + 'px';
+    message.style.left = offset;
+  }, 10);
+
+  setTimeout(() => {
+    let timerDisappear = setInterval(() => {
+      const {left: x} = message.getBoundingClientRect();
+      if (x >= startedOffset) {
+        clearInterval(timerDisappear);
+        return;
+      }
+      let offset = x + 1 + 'px';
+      message.style.left = offset;
+    }, 10);
+  }, 3000);
+
+  // function step(timestamp) {
+  //   // do something for every frame
+  //   window.requestAnimationFrame(step);
+  // }
+  // window.requestAnimationFrame(step);
 }
