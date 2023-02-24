@@ -17,7 +17,8 @@ function inputSearchVerdict(card) {
   let request = inputSearchFilter.value.trim().toLowerCase();
   let textOfCard 
     = card.querySelector('.single-card__question').innerText 
-    + card.querySelector('.single-card__answer').innerText;
+    + card.querySelector('.single-card__answer').innerText
+    + card.querySelector('.single-card__id').innerText;
   // console.log(request);
   // console.log(textOfCard);
   let verdict = false;

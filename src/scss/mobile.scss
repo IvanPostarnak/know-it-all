@@ -206,8 +206,8 @@
     border-radius: 25px;
     @include font-family-weight-size($jetbrains-font, $regular, 1.2rem);
     line-height: 100%;
-    color: rgba($black, $half-opacity);
-    background-color: #e8e8e8;
+    color: $black;
+    background-color: $white;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
