@@ -67,19 +67,19 @@
     <section class="container container--slide-filter">
       <div class="slide slide--slide-filter js-filter">
         <div class="slide__inner slide__inner--slide-filter">
-          <input class="add-card-form__input-question js-filter-search"
+          <input class="filter__search js-filter-search"
                       name="filtered-text"
                       type="text"
                       placeholder="Search through cards..."
                       tabindex="3"
                       required>
-          <input class="slide__type-of-cards--default js-default-type"
+          <input class="filter__type-of-cards--default js-default-type"
                 type="checkbox"
                 name="type-of-cards"
                 id="default-cards"
                 checked>
           <label for="default-cards">default</label>
-          <input class="slide__type-of-cards--users js-users-type"
+          <input class="filter__type-of-cards--users js-users-type"
                 type="checkbox"
                 name="type-of-cards"
                 id="users-cards"
@@ -94,7 +94,16 @@
               </div>
             </div>
           </div>
-          <button class="add-card-form__submit-button js-reset-filter-button">Reset filter</button>
+          <div class="filter__date-wrapper">
+            <input class="filter__date-input js-date-filter"
+                      name="filtered-text"
+                      type="date"
+                      value=""
+                      tabindex="3"
+                      required>
+            <button class="filter__reset-date-button js-reset-date-button">X</button>
+          </div>
+          <button class="filter__reset-filter-button js-reset-filter-button">Reset filter</button>
         </div>
       </div>
     </section>

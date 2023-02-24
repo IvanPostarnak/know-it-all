@@ -97,6 +97,84 @@
   }
 }
 
+.filter {
+
+  &__search {
+    display: block;
+    width: 100%;
+    height: 10%;
+    @include min-width-and-height(280px, 40px);
+    @include max-width-and-height(100%, 60px);
+    border: none;
+    border-radius: 25px;
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 100%;
+    color: $black;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+  }
+
+  &__type-of-cards {
+    
+    &--default {
+
+    }
+
+    &--users {
+
+    }
+  }
+
+  &__date-wrapper {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__date-input {
+    width: 50%;
+    height: 10%;
+    @include min-width-and-height(220px, 40px);
+    @include max-width-and-height(100%, 60px);
+    border: none;
+    border-radius: 25px;
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 100%;
+    color: $black;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+  }
+
+  &__reset-date-button {
+    width: 50%;
+    height: 10%;
+    @include min-width-and-height(40px, 40px);
+    @include max-width-and-height(100%, 60px);
+    border: none;
+    border-radius: 25px;
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 100%;
+    color: $black;
+    cursor: pointer;
+  }
+
+  &__reset-filter-button {
+    display: block;
+    width: 100%;
+    height: 10%;
+    @include min-width-and-height(280px, 40px);
+    @include max-width-and-height(100%, 60px);
+    border: none;
+    border-radius: 25px;
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 100%;
+    color: $black;
+    cursor: pointer;
+  }
+}
+
 .trash-box {
   display: none;
   visibility: hidden;

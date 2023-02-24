@@ -1,8 +1,14 @@
 export default function isAppropriateCard(card) {
-  inputSearchVerdict(card);
   return (
-    defaultCardVerdict(card) && selectCardVerdict(card) && inputSearchVerdict(card)
-    || usersCardVerdict(card) && selectCardVerdict(card) && inputSearchVerdict(card)
+    defaultCardVerdict(card) 
+    && selectCardVerdict(card) 
+    && inputSearchVerdict(card) 
+    && dateSearchVerdict(card)
+    || 
+    usersCardVerdict(card) 
+    && selectCardVerdict(card) 
+    && inputSearchVerdict(card) 
+    && dateSearchVerdict(card)
   );
 }
 
@@ -66,4 +72,33 @@ function selectCardVerdict(card) {
   }
 
   return verdict;
+}
+
+function dateSearchVerdict(card) {
+  const dateSearchFilter = document.querySelector('.js-date-filter');
+  let requiredDate = dateSearchFilter.value;
+  if (requiredDate == "") return true;
+
+  let cardDate = card.querySelector('.single-card__time time').getAttribute('datetime');
+  let cardDateYear = cardDate.slice(0, 4);
+  
+  let cardDateMonth = cardDate.slice(5, 7);
+  let cardDateDay;
+
+  if (cardDateMonth.split('')[1] == '-') {
+    cardDateDay = cardDate.slice(7, 9);
+    cardDateMonth = cardDateMonth.slice(0, -1);
+    cardDateMonth = '0' + cardDateMonth;
+  } else {
+    cardDateDay = cardDate.slice(8, 10);
+  }
+
+  if (cardDateDay.split('')[1] == 'T') {
+    cardDateDay = cardDateDay.slice(0, -1);
+    cardDateDay = '0' + cardDateDay;
+  }
+  
+  let extractedCardDate = cardDateYear + '-' + cardDateMonth + '-' + cardDateDay;
+
+  return requiredDate == extractedCardDate;
 }
