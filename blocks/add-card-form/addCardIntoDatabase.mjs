@@ -29,8 +29,18 @@ export default async function addCardIntoDatabase(data) {
 
 async function validateResponse(response) {
   try {
-    if (response.ok === false) throw new Error(`User Error: ${response.status}`);
+    if (response.ok === false) throw new Error(response.status);
+    const successMessage = document.querySelector('.js-submit-success-message');
+    successMessage.classList.remove('hidden');
+    setTimeout(() => {
+      successMessage.classList.add('hidden');
+    }, 3000);
   } catch (error) {
-    console.log(error.message);
+    const errorMessage = document.querySelector('.js-submit-error-message');
+    errorMessage.querySelector('p').textContent = `${error}`;
+    errorMessage.classList.remove('hidden');
+    setTimeout(() => {
+      errorMessage.classList.add('hidden');
+    }, 3000);
   }
 }

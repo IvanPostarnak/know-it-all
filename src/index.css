@@ -535,7 +535,7 @@
 }
 
 .submit-message {
-  width: 200px;
+  width: 175px;
   height: 50px;
   border-width: 2px;
   border-style: solid;
@@ -553,7 +553,6 @@
   background-color: #D6E3CA;
 }
 .submit-message--error {
-  top: 80px;
   border-color: #8C3343;
   background-color: #E7D3D3;
 }
@@ -572,6 +571,11 @@
 }
 .submit-message__text--error {
   color: #8C3343;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
 }
 
 .container {

@@ -15,6 +15,6 @@ export default async function addCardForm() {
 
     addCardIntoDatabase(formObjectJson)
     .then(() => cardForm.reset())
-    .then(() => window.location.reload())
+    .then(() => {})
   })
 }
