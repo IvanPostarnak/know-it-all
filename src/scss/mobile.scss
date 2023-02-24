@@ -131,10 +131,19 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
+  }
+
+  &__date-input-wrapper {
+    width: 100%;
+    height: 100%;
+    @include min-width-and-height(220px, 40px);
+    @include max-width-and-height(100%, 60px);
+    position: relative;
   }
 
   &__date-input {
-    width: 50%;
+    width: 100%;
     height: 10%;
     @include min-width-and-height(220px, 40px);
     @include max-width-and-height(100%, 60px);
@@ -142,9 +151,23 @@
     border-radius: 25px;
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;
-    color: $black;
-    margin-bottom: 10px;
+    color: rgba($black, $half-opacity);
     padding: 10px 20px;
+  }
+
+  &__date-input-cover {
+    width: 20%;
+    height: 90%;
+    @include min-width-and-height(40px, 35px);
+    @include max-width-and-height(30%, 50px);
+    border: none;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    background-color: $white;
+    pointer-events: none;
   }
 
   &__reset-date-button {
