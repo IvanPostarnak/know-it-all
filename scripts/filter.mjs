@@ -21,12 +21,16 @@ export default async function filterCards() {
   const dateSearchFilter = document.querySelector('.js-date-filter');
   const resetDateButton = document.querySelector('.js-reset-date-button');
   const resetButton = document.querySelector('.js-reset-filter-button');
+  const cardsCounter = document.querySelector('.js-filter-cards-counter');
+  setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
 
   inputSearchFilter.addEventListener('input', () => {
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
 
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
+
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -36,6 +40,8 @@ export default async function filterCards() {
       
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
+
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -45,16 +51,19 @@ export default async function filterCards() {
 
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
+
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
 
   selectCategoryFilter.addEventListener('change', () => {
-
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
 
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
+
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -64,6 +73,8 @@ export default async function filterCards() {
 
     shownArrayOfCards = Array.from(cardsHolder.querySelectorAll('.js-single-card-holder'));
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
+
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -72,6 +83,7 @@ export default async function filterCards() {
     dateSearchFilter.value = "";
 
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
   });
 
   resetButton.addEventListener('click', () => {
@@ -82,7 +94,12 @@ export default async function filterCards() {
     dateSearchFilter.value = "";
 
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+    setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
   });
+}
+
+function setCounter(cardsCounter, shownArr, hiddenArr) {
+  cardsCounter.textContent = `All: ${shownArr.length + hiddenArr.length} Shown: ${shownArr.length}`;
 }
 
 function filteredRender(shownArr, hiddenArr, render, trashbox) {

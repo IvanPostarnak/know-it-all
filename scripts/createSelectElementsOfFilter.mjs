@@ -2,21 +2,19 @@ export default async function createSelectElementsOfFilter(categories) {
   let arrayOfSelectHolderInFilter = document.querySelector('.js-select-filter-holder');
   const select = createSelect();
 
-  let all = 0;
   let option;
 
   for (let key in categories) {
     option = document.createElement('option');
     option.value = key;
     option.text = `${key} (${categories[key]})`;
-    all += categories[key];
     option.classList.add('add-card-form__select-item');
     select.append(option);
   }
 
   option = document.createElement('option');
   option.value = "All";
-  option.text = `All (${all})`;
+  option.text = `All`;
   option.classList.add('add-card-form__select-item');
   option.setAttribute('selected', '');
   select.prepend(option);

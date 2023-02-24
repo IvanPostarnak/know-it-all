@@ -6,4 +6,4 @@ import filterCards from './filter.mjs';
 addCardForm();
 await renderCards();
 goToTopAndBottomButton();
-await filterCards();
+filterCards();
