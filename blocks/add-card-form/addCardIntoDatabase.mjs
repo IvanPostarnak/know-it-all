@@ -1,3 +1,5 @@
+import appearAndRemoveSubmitMessage from './../submit-message/submitMessage.mjs';
+
 export default async function addCardIntoDatabase(data) {
   let localObject = await JSON.parse(data);
   localObject['lang'] = 'en';
@@ -16,7 +18,7 @@ export default async function addCardIntoDatabase(data) {
 
   let sendingData = JSON.stringify(localObject);
 
-  const response = await fetch('/server/server.php', {
+  const response = await fetch('/server/index.php??', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -30,17 +32,8 @@ export default async function addCardIntoDatabase(data) {
 async function validateResponse(response) {
   try {
     if (response.ok === false) throw new Error(response.status);
-    const successMessage = document.querySelector('.js-submit-success-message');
-    successMessage.classList.remove('hidden');
-    setTimeout(() => {
-      successMessage.classList.add('hidden');
-    }, 3000);
+    appearAndRemoveSubmitMessage();
   } catch (error) {
-    const errorMessage = document.querySelector('.js-submit-error-message');
-    errorMessage.querySelector('p').textContent = `${error}`;
-    errorMessage.classList.remove('hidden');
-    setTimeout(() => {
-      errorMessage.classList.add('hidden');
-    }, 3000);
+    appearAndRemoveSubmitMessage(error);
   }
 }
