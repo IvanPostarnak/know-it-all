@@ -1,0 +1,49 @@
+@import './../../src/scss/normalize';
+
+.submit-message {
+  width: 200px;
+  height: 50px;
+  border-width: 2px;
+  border-style: solid;
+  z-index: $highest-layer;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  &--success {
+    border-color: #376335;
+    background-color: #D6E3CA;
+  }
+
+  &--error {
+    border-color: #8C3343;
+    background-color: #E7D3D3;
+  }
+
+  &__img {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  &__text {
+    @include font-family-weight-size($jetbrains-font, $regular, 12px);
+    line-height: 100%;
+
+    &--success {
+      color: #376335;
+    }
+
+    &--error {
+      color: #8C3343;
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
