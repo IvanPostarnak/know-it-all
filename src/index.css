@@ -3,7 +3,7 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2rem;
-  color: #000000;
+  color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -29,7 +29,7 @@
 .one-field-preloader {
   width: 100%;
   height: 100%;
-  background-color: #1b1c24;
+  background-color: #332F35;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -109,7 +109,7 @@
   height: 30px;
   display: inline-block;
   overflow: hidden;
-  background: #1b1c24;
+  background: #332F35;
 }
 
 .ldio-l70we991ur {
@@ -159,7 +159,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: #000000;
+  color: #ffffff;
+  background-color: #332F35;
   margin-bottom: 10px;
   padding: 10px 20px;
 }
@@ -177,7 +178,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1em;
-  color: #000000;
+  color: #ffffff;
+  background-color: #332F35;
   margin-bottom: 10px;
   padding: 20px 20px;
   resize: none;
@@ -203,7 +205,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #332F35;
   border: none;
   border-radius: 25px;
   padding: 10px 20px;
@@ -211,6 +214,7 @@
 .add-card-form__select-item {
   width: 100%;
   height: 100%;
+  background-color: #332F35;
 }
 .add-card-form__submit-button {
   display: block;
@@ -226,7 +230,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: #000000;
+  color: #ffffff;
+  background-color: #332F35;
   cursor: pointer;
 }
 
@@ -235,14 +240,14 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1em;
-  color: #000000;
+  color: #ffffff;
   opacity: 0.5;
 }
 
 .single-card-preloader {
   width: 100%;
   height: 100%;
-  background-color: #1b1c24;
+  background-color: #332F35;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,7 +326,7 @@
   height: 100px;
   display: inline-block;
   overflow: hidden;
-  background: #1b1c24;
+  background: #332F35;
 }
 
 .ldio-nxtxow40e7 {
@@ -344,7 +349,7 @@
   min-height: 450px;
   max-width: 60vw;
   max-height: 640px;
-  background-color: #ffffff;
+  background-color: #332F35;
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -363,7 +368,7 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5em;
-  color: #000000;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -385,7 +390,7 @@
   width: 100%;
   height: 2px;
   content: "";
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   display: block;
   left: 0;
   bottom: -15px;
@@ -414,7 +419,7 @@
   left: 0;
   top: -15px;
   content: "";
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .single-card__categories {
   text-align: end;
@@ -457,7 +462,7 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2rem;
-  color: #000000;
+  color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -489,7 +494,7 @@
   background-image: -ms-linear-gradient(45deg, #a82d56 0%, #db83d1 50%, #e6bde9 100%);
   background-image: -o-linear-gradient(45deg, #a82d56 0%, #db83d1 50%, #e6bde9 100%);
   background-image: linear-gradient(45deg, #a82d56 0%, #db83d1 50%, #e6bde9 100%);
-  color: #ffffff;
+  color: #332F35;
   z-index: 1000;
   position: fixed;
   right: 10px;
@@ -511,7 +516,7 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2rem;
-  color: #000000;
+  color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -606,9 +611,7 @@
 }
 .slide--slide-filter {
   flex-direction: column;
-  background-image: url(/src/img/background-picture.webp);
-  background-repeat: repeat;
-  background-size: auto;
+  background-color: #1b1c24;
 }
 .slide__inner {
   width: 100%;
@@ -643,7 +646,7 @@
   font-weight: 400;
   font-size: 4rem;
   line-height: 1em;
-  color: #ffffff;
+  color: #332F35;
   word-spacing: -10px;
 }
 .filter__search {
@@ -660,7 +663,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: #000000;
+  color: #ffffff;
+  background-color: #332F35;
   margin-bottom: 10px;
   padding: 10px 20px;
 }
@@ -694,7 +698,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #332F35;
   padding: 10px 20px;
 }
 .filter__date-input-cover {
@@ -710,7 +715,7 @@
   top: 50%;
   transform: translateY(-50%);
   right: 5%;
-  background-color: #ffffff;
+  background-color: #332F35;
   pointer-events: none;
 }
 .filter__reset-date-button {
@@ -726,7 +731,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: #000000;
+  color: #ffffff;
+  background-color: #332F35;
   cursor: pointer;
 }
 .filter__reset-filter-button {
@@ -743,7 +749,8 @@
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
-  color: #000000;
+  color: #ffffff;
+  background-color: #332F35;
   cursor: pointer;
 }
 .filter__cards-counter {
@@ -759,8 +766,8 @@
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 100%;
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #332F35;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
@@ -769,7 +776,7 @@
 .filter__cards-counter-preloader {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #332F35;
   border-radius: 25px;
   display: flex;
   justify-content: center;
