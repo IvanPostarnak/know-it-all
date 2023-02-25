@@ -2,86 +2,127 @@
   "shared": {
     "name": "Shared",
     "iconUrl": "",
+    "color": "#339CA3",
     "description": "shared-description"
   },
   "html": {
     "name": "HTML",
     "iconUrl": "",
+    "color": "#FF7F4F",
     "description": "html-description"
   },
   "css": {
     "name": "CSS",
     "iconUrl": "",
+    "color": "#7FD3E6",
     "description": "css-description"
   },
   "sass": {
     "name": "Sass / Scss",
     "iconUrl": "",
+    "color": "#EE3046",
     "description": "sass-description"
   },
   "javascript": {
     "name": "JavaScript",
     "iconUrl": "",
+    "color": "#FFF971",
     "description": "js-description"
   },
   "typescript": {
     "name": "TypeScript",
     "iconUrl": "",
+    "color": "#C7F7F2",
     "description": "ts-description"
   },
   "nodejs": {
     "name": "Node JS",
     "iconUrl": "",
+    "color": "#51B341",
     "description": "nodejs-description"
   },
   "react": {
     "name": "React",
     "iconUrl": "",
+    "color": "#4876BB",
     "description": "react-description"
   },
   "redux": {
     "name": "Redux",
     "iconUrl": "",
+    "color": "#272573",
     "description": "redux-description"
   },
   "git": {
     "name": "Git",
     "iconUrl": "",
+    "color": "#712835",
     "description": "git-description"
   },
   "pixelart": {
     "name": "Pixel Art",
     "iconUrl": "",
+    "color": "#621B52",
     "description": "pixelart-description"
   },
   "c": {
     "name": "C",
     "iconUrl": "",
+    "color": "#5D1835",
     "description": "c-description"
   },
   "csharp": {
     "name": "C#",
     "iconUrl": "",
+    "color": "#35082A",
     "description": "csharp-description"
   },
   "redis": {
     "name": "Redis",
     "iconUrl": "",
+    "color": "#371848",
     "description": "redis-description"
   },
   "sql": {
     "name": "SQL",
     "iconUrl": "",
+    "color": "#175145",
     "description": "sql-description"
+  },
+  "postgresql": {
+    "name": "Postgre SQL",
+    "iconUrl": "",
+    "color": "#2E8065",
+    "description": "postgresql-description"
   },
   "php": {
     "name": "PHP",
     "iconUrl": "",
+    "color": "#261152",
     "description": "php-description"
   },
   "webpack": {
     "name": "Webpack",
     "iconUrl": "",
+    "color": "#DF426E",
     "description": "webpack-description"
+  },
+  "jsx": {
+    "name": "JSX",
+    "iconUrl": "",
+    "color": "#9BD547",
+    "description": "jsx-description"
+  },
+  "tsx": {
+    "name": "TSX",
+    "iconUrl": "",
+    "color": "#D29C8A",
+    "description": "tsx-description"
+  },
+  "nextjs": {
+    "name": "Next JS",
+    "iconUrl": "",
+    "color": "#0C082A",
+    "description": "nextjs-description"
   }
 }
