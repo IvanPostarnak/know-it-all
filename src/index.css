@@ -599,13 +599,13 @@
   align-items: center;
 }
 .slide--slide-intro {
-  background-image: url(/src/img/background-picture.webp);
+  background-image: url(/src/img/background-picture-2.webp);
   background-repeat: repeat;
   background-size: auto;
 }
 .slide--slide-cards {
   height: auto;
-  background-image: url(/src/img/background-picture.webp);
+  background-image: url(/src/img/background-picture-2.webp);
   background-repeat: repeat;
   background-size: auto;
 }
