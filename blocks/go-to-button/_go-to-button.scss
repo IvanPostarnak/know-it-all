@@ -6,7 +6,8 @@
   border-radius: 25px;
   @include linear-gradient(
       45deg,
-      #db83d1 0%,
+      #a82d56 0%,
+      #db83d1 50%,
       #e6bde9 100%);
   color: $white;
   z-index: $highest-layer;
