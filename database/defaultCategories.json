@@ -26,13 +26,13 @@
   "javascript": {
     "name": "JavaScript",
     "iconUrl": "",
-    "color": "#FFF971",
+    "color": "#B8560F",
     "description": "js-description"
   },
   "typescript": {
     "name": "TypeScript",
     "iconUrl": "",
-    "color": "#C7F7F2",
+    "color": "#4192D9",
     "description": "ts-description"
   },
   "nodejs": {

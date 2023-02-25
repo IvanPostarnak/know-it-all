@@ -16,6 +16,7 @@ export default async function createSelectElementsForCategories() {
     let option = document.createElement('option');
     option.value = id;
     option.text = tempCategories[id].name;
+    option.style.color = tempCategories[id].color;
     option.classList.add('add-card-form__select-item');
     let optionClone = option.cloneNode(true);
     mainSelect.append(option);
