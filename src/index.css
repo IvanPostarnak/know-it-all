@@ -29,7 +29,7 @@
 .one-field-preloader {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #1b1c24;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -85,21 +85,21 @@
 
 .ldio-l70we991ur div:nth-child(1) {
   left: 17.5px;
-  background: #001afe;
+  background: #a82d56;
   animation: ldio-l70we991ur-1 0.6097560976s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: -0.1219512195s;
 }
 
 .ldio-l70we991ur div:nth-child(2) {
   left: 42.5px;
-  background: #2196f3;
+  background: #db83d1;
   animation: ldio-l70we991ur-2 0.6097560976s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: -0.0609756098s;
 }
 
 .ldio-l70we991ur div:nth-child(3) {
   left: 67.5px;
-  background: #00fcef;
+  background: #e6bde9;
   animation: ldio-l70we991ur-3 0.6097560976s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: undefineds;
 }
@@ -109,7 +109,7 @@
   height: 30px;
   display: inline-block;
   overflow: hidden;
-  background: #ffffff;
+  background: #1b1c24;
 }
 
 .ldio-l70we991ur {
@@ -242,7 +242,7 @@
 .single-card-preloader {
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: #1b1c24;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -297,21 +297,21 @@
 
 .ldio-nxtxow40e7 div:nth-child(1) {
   left: 17.5px;
-  background: #001afe;
+  background: #a82d56;
   animation: ldio-nxtxow40e7-1 0.6666666667s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: -0.1333333333s;
 }
 
 .ldio-nxtxow40e7 div:nth-child(2) {
   left: 42.5px;
-  background: #2196f3;
+  background: #db83d1;
   animation: ldio-nxtxow40e7-2 0.6666666667s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: -0.0666666667s;
 }
 
 .ldio-nxtxow40e7 div:nth-child(3) {
   left: 67.5px;
-  background: #00fcef;
+  background: #e6bde9;
   animation: ldio-nxtxow40e7-3 0.6666666667s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   animation-delay: undefineds;
 }
@@ -321,7 +321,7 @@
   height: 100px;
   display: inline-block;
   overflow: hidden;
-  background: #ffffff;
+  background: #1b1c24;
 }
 
 .ldio-nxtxow40e7 {
@@ -594,37 +594,21 @@
   align-items: center;
 }
 .slide--slide-intro {
-  background-image: -webkit-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: -moz-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: -ms-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: -o-linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: linear-gradient(0deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(/src/img/background-picture.webp);
+  background-repeat: repeat;
+  background-size: auto;
 }
 .slide--slide-cards {
   height: auto;
-  background-image: -webkit-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: -moz-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: -ms-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: -o-linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-image: linear-gradient(180deg, rgb(0, 255, 239) 0%, rgb(0, 18, 255) 100%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(/src/img/background-picture.webp);
+  background-repeat: repeat;
+  background-size: auto;
 }
 .slide--slide-filter {
   flex-direction: column;
-  background-image: -webkit-linear-gradient(45deg, #db83d1 0%, #e6bde9 100%);
-  background-image: -moz-linear-gradient(45deg, #db83d1 0%, #e6bde9 100%);
-  background-image: -ms-linear-gradient(45deg, #db83d1 0%, #e6bde9 100%);
-  background-image: -o-linear-gradient(45deg, #db83d1 0%, #e6bde9 100%);
-  background-image: linear-gradient(45deg, #db83d1 0%, #e6bde9 100%);
-  color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: url(/src/img/background-picture.webp);
+  background-repeat: repeat;
+  background-size: auto;
 }
 .slide__inner {
   width: 100%;
