@@ -75,10 +75,11 @@
   }
 
   &__title {
-    @include font-family-weight-size($default-font, $regular, 4rem);
+    @include font-family-weight-size($default-font, $regular, 1rem);
     line-height: 1em;
     color: $white;
     word-spacing: -10px;
+    visibility: hidden;
 
     &--slide-intro {
 
