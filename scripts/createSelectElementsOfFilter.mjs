@@ -1,5 +1,8 @@
+import getCategoriesFromDatabase from "../blocks/add-card-form/getCategoriesFromDatabase.mjs";
+
 export default async function createSelectElementsOfFilter(categories) {
   let arrayOfSelectHolderInFilter = document.querySelector('.js-select-filter-holder');
+  let objectOfCategories = await getCategoriesFromDatabase();
   const select = createSelect();
 
   let option;
@@ -7,6 +10,7 @@ export default async function createSelectElementsOfFilter(categories) {
   for (let key in categories) {
     option = document.createElement('option');
     option.value = key;
+    option.style.color = objectOfCategories[key].color;
     option.text = `${key} (${categories[key]})`;
     option.classList.add('add-card-form__select-item');
     select.append(option);
