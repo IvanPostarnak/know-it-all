@@ -55,7 +55,7 @@
 
   &__select-holder {
     width: 100%;
-    height: 10%;
+    height: 1%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
     margin-bottom: 10px;
@@ -64,7 +64,7 @@
 
   &__select-field {
     width: 100%;
-    height: 100%;
+    height: 1%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);

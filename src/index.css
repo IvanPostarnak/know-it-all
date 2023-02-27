@@ -186,7 +186,7 @@
 }
 .add-card-form__select-holder {
   width: 100%;
-  height: 10%;
+  height: 1%;
   min-width: 280px;
   min-height: 40px;
   max-width: 100%;
@@ -196,7 +196,7 @@
 }
 .add-card-form__select-field {
   width: 100%;
-  height: 100%;
+  height: 1%;
   min-width: 280px;
   min-height: 40px;
   max-width: 100%;
@@ -625,6 +625,7 @@
 .slide--slide-footer {
   flex-direction: column;
   justify-content: flex-start;
+  background-color: #1b1c24;
 }
 .slide__inner {
   width: 100%;
@@ -671,10 +672,22 @@
   word-spacing: -10px;
   visibility: hidden;
 }
+.filter__holder {
+  width: 100%;
+  height: 100%;
+  min-width: 280px;
+  min-height: 320px;
+  max-width: 100%;
+  max-height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .filter__search {
   display: block;
   width: 100%;
-  height: 10%;
+  height: 1%;
   min-width: 280px;
   min-height: 40px;
   max-width: 100%;
@@ -687,8 +700,84 @@
   line-height: 100%;
   color: #ffffff;
   background-color: #332F35;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 10px 20px;
+}
+.filter__select-holder {
+  width: 100%;
+  height: 1%;
+  min-width: 280px;
+  min-height: 40px;
+  max-width: 100%;
+  max-height: 60px;
+  margin-bottom: 15px;
+  background: transparent;
+}
+.filter__checkbox-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.filter__single-input-wrapper {
+  height: 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.filter__type-of-cards {
+  display: none;
+}
+.filter__single-label {
+  padding-left: 30px;
+}
+.filter__type-of-cards + label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #332F35;
+  color: #332F35;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  border: 1px solid #ffffff;
+  vertical-align: middle;
+}
+.filter__type-of-cards:checked + label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #332F35;
+  background-image: url(/src/img/know-it-all-checkbox-16-16.svg);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  color: #332F35;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  border: 1px solid #332F35;
+  vertical-align: middle;
+}
+.filter__date-wrapper {
+  width: 100%;
+  height: 1%;
+  min-width: 280px;
+  min-height: 40px;
+  max-width: 100%;
+  max-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 .filter__date-input {
   width: 100%;
@@ -707,12 +796,16 @@
   background-color: #332F35;
   padding: 10px 20px;
 }
+.filter__date-space {
+  background-color: transparent;
+  width: 20px;
+}
 .filter__reset-date-button {
-  width: 50%;
-  height: 10%;
+  width: 10vmin;
+  height: 10vmin;
   min-width: 40px;
   min-height: 40px;
-  max-width: 100%;
+  max-width: 60px;
   max-height: 60px;
   border: none;
   border-radius: 25px;
@@ -727,7 +820,7 @@
 .filter__reset-filter-button {
   display: block;
   width: 100%;
-  height: 10%;
+  height: 1%;
   min-width: 280px;
   min-height: 40px;
   max-width: 100%;
@@ -741,6 +834,7 @@
   color: #ffffff;
   background-color: #332F35;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 .filter__cards-counter {
   width: 10%;
@@ -761,6 +855,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 .filter__cards-counter-preloader {
   width: 100%;
