@@ -11,4 +11,26 @@
     fwrite($fs, "\t\tSERVER[SERVER_ADMIN]: " . $_SERVER["SERVER_ADMIN"] . "\n");
     fwrite($fs, "\t\tSERVER[SERVER_PORT]: " . $_SERVER["SERVER_PORT"] . "\n\n");
   }
+
+  function provide_integrity_of_files($fs) {
+      fwrite($fs, "\t\tenter provide_integrity_of_files() function\n");
+      
+    $checkingFile = fopen(USERS_CARDS_FILE_URL, "a+");
+    fclose($checkingFile);
+
+    $checkingFile = fopen(USERS_CATEGORIES_FILE_URL, "a+");
+    fclose($checkingFile);
+
+    $checkingFile = fopen(DATABASE_META_FILE_URL, "a+");
+    fclose($checkingFile);
+
+    $result = file_get_contents(DATABASE_META_FILE_URL, false, null, 0, 1);
+    if ($result == false) {
+        fwrite($fs, "\t\t\tdatabaseMeta.json file is empty - creating\n");
+      $response = file_put_contents(DATABASE_META_FILE_URL, "{\"defaultCategories\":21,\"defaultCards\":3,\"usersCategories\":0,\"usersCards\":0,\"nextCardId\":4}");
+        fwrite($fs, "\t\t\t" . $response . "\n");
+    }
+
+      fwrite($fs, "\t\texit provide_integrity_of_files() function\n\n");
+  }
 ?>

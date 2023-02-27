@@ -6,6 +6,8 @@
   global $serverLog;
     fwrite($serverLog, "# ENTER server.php at: " . date("H-i-s") . "\n\n");
 
+  provide_integrity_of_files($serverLog);
+
   save_metadata_about_request($serverLog);
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
