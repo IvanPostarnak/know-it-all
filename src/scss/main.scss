@@ -1,1 +1,66 @@
-@import './mobile.scss'
+@import './mobile.scss';
+
+@media screen and (min-width: 640px) {
+  .slide__inner--slide-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
+
+  .filter__holder {
+    width: 640px;
+    height: 110px;
+    min-height: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filter__holder {
+    width: 1280px;
+    height: 40px;
+    min-height: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+
+  .filter__search {
+    min-width: 290px;
+    max-width: 290px;
+    margin-bottom: 0;
+  }
+
+  .filter__select-holder {
+    min-width: 290px;
+    max-width: 290px;
+    margin-bottom: 0;
+  }
+
+  .filter__checkbox-wrapper {
+    min-width: 290px;
+    max-width: 290px;
+    margin-bottom: 0;
+  }
+
+  .filter__date-wrapper {
+    min-width: 290px;
+    max-width: 290px;
+    margin-bottom: 0;
+  }
+
+  .slide__inner--slide-filter {
+    min-height: 0px;
+    height: auto;
+  }
+}
