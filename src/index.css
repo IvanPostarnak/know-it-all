@@ -492,6 +492,8 @@
   right: 10px;
   bottom: 10px;
   transition-duration: 0.4s;
+  opacity: 0.4;
+  cursor: pointer;
 }
 .go-to-top-and-bottom-button__arrow {
   width: 100%;
@@ -501,6 +503,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
+  pointer-events: none;
+}
+
+.go-to-top-and-bottom-button:hover {
+  opacity: 1;
 }
 
 :root {
