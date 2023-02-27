@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
   background-color: #332F35;
-  border-radius: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,7 +154,7 @@
   max-width: 100%;
   max-height: 40px;
   border: none;
-  border-radius: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
@@ -173,7 +173,7 @@
   max-width: 100%;
   max-height: 120px;
   border: none;
-  border-radius: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
@@ -191,6 +191,7 @@
   min-height: 40px;
   max-width: 100%;
   max-height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 10px;
   background: transparent;
 }
@@ -208,7 +209,7 @@
   color: rgba(255, 255, 255, 0.5);
   background-color: #332F35;
   border: none;
-  border-radius: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 10px 20px;
 }
 .add-card-form__select-item {
@@ -225,7 +226,7 @@
   max-width: 100%;
   max-height: 40px;
   border: none;
-  border-radius: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
@@ -346,7 +347,8 @@
   width: 300px;
   height: 450px;
   background-color: #332F35;
-  border-radius: 25px;
+  border-radius: 2px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   margin: 10px 10px;
@@ -480,7 +482,7 @@
 .go-to-top-and-bottom-button {
   width: 48px;
   height: 48px;
-  border-radius: 25px;
+  border-bottom: 2px solid #ffffff;
   background-image: -webkit-linear-gradient(45deg, #a82d56 0%, #db83d1 50%, #e6bde9 100%);
   background-image: -moz-linear-gradient(45deg, #a82d56 0%, #db83d1 50%, #e6bde9 100%);
   background-image: -ms-linear-gradient(45deg, #a82d56 0%, #db83d1 50%, #e6bde9 100%);
@@ -698,30 +700,30 @@
   width: 300px;
   height: 40px;
   border: none;
-  border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
   color: #ffffff;
   background-color: #332F35;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 15px;
   padding: 10px 20px;
 }
 .filter__select-holder {
   width: 300px;
   height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 15px;
   background: transparent;
 }
 .filter__checkbox-wrapper {
   width: 300px;
   height: 40px;
-  border-radius: 25px;
   display: flex;
   justify-content: space-around;
   margin-bottom: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
 }
@@ -779,15 +781,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .filter__date-input {
   flex-grow: 1;
   min-width: 220px;
   height: 40px;
   border: none;
-  border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
@@ -804,7 +804,6 @@
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
@@ -825,13 +824,13 @@
   width: 300px;
   height: 40px;
   border: none;
-  border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 100%;
   color: #ffffff;
   background-color: #332F35;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   margin-bottom: 15px;
 }
@@ -839,13 +838,13 @@
   width: 200px;
   height: 20px;
   border: none;
-  border-radius: 25px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 100%;
   color: #ffffff;
   background-color: #332F35;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
@@ -856,7 +855,6 @@
   width: 100%;
   height: 100%;
   background-color: #332F35;
-  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -922,7 +920,6 @@
   width: 300px;
   height: 450px;
   background-color: transparent;
-  border-radius: 25px;
   display: flex;
   align-items: center;
   margin: 10px 20px;
@@ -949,7 +946,7 @@
     margin-bottom: 20px;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1297px) {
   .filter__holder {
     width: 1280px;
     height: 40px;
