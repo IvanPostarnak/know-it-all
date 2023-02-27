@@ -655,11 +655,12 @@
   padding: 20px;
 }
 .slide__inner--slide-footer {
-  min-width: 320px;
-  min-height: 50vh;
+  min-width: 280px;
+  min-height: auto;
   max-width: 60vw;
   max-height: 50vh;
   padding: 20px;
+  justify-content: space-around;
 }
 .slide__title {
   font-family: "Share Tech Mono", "JetBrains Mono", monospace;
@@ -769,6 +770,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.single-author {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.single-author__picture {
+  margin-right: 20px;
+}
+.single-author__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.single-author__name {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 100%;
+}
+.single-author__links-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.single-author__link-item {
+  text-decoration: none;
+  margin-right: 10px;
+  width: 20px;
+}
+.single-author__icon {
+  width: 1%;
+  height: 1%;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
 }
 
 .trash-box {
