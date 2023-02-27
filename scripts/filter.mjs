@@ -31,6 +31,7 @@ export default async function filterCards() {
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
 
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -42,6 +43,7 @@ export default async function filterCards() {
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
 
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -53,6 +55,7 @@ export default async function filterCards() {
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
 
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -64,6 +67,7 @@ export default async function filterCards() {
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
 
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -75,6 +79,7 @@ export default async function filterCards() {
     hiddenCards = Array.from(trashbox.querySelectorAll('.js-single-card-holder'));
 
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     // console.log(shownArrayOfCards);
     // console.log(hiddenCards);
   });
@@ -83,6 +88,7 @@ export default async function filterCards() {
     dateSearchFilter.value = "";
 
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
   });
 
@@ -94,6 +100,7 @@ export default async function filterCards() {
     dateSearchFilter.value = "";
 
     filteredRender(shownArrayOfCards, hiddenCards, cardsHolder, trashbox);
+    reactIfEmpty(shownArrayOfCards, cardsHolder, trashbox);
     setCounter(cardsCounter, shownArrayOfCards, hiddenCards);
   });
 }
@@ -117,5 +124,26 @@ function filteredRender(shownArr, hiddenArr, render, trashbox) {
         render.prepend(card);
       }
     })
+  }
+}
+
+function reactIfEmpty(shownArr, render, trashbox) {
+  if (shownArr.length == 0) {
+    let emptyCardHolder = trashbox.querySelector('.js-empty-card-holder');
+    if (emptyCardHolder == undefined) {
+      emptyCardHolder = document.createElement('div');
+      emptyCardHolder.classList.add('empty-card-holder', 'js-empty-card-holder');
+
+      let emptyPicture = document.createElement('img');
+      emptyPicture.setAttribute('src', './src/img/know-it-all-empty-280-280.png');
+      emptyCardHolder.prepend(emptyPicture);
+    }
+    
+    render.prepend(emptyCardHolder);
+  } else {
+    let emptyCardHolder = render.querySelector('.js-empty-card-holder');
+    if (emptyCardHolder) {
+      trashbox.prepend(emptyCardHolder);
+    }
   }
 }

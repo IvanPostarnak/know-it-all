@@ -57,6 +57,12 @@
   &--slide-footer {
     flex-direction: column;
     justify-content: flex-start;
+    background-color: #1b1c24;
+  }
+
+  &--slide-footer {
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   &__inner {
@@ -86,9 +92,10 @@
     }
 
     &--slide-footer {
-      @include min-width-and-height(320px, 50vh);
+      @include min-width-and-height(280px, auto);
       @include max-width-and-height(60vw, 50vh);
       padding: 20px;
+      justify-content: space-around
     }
   }
 
@@ -107,10 +114,21 @@
 
 .filter {
 
+  &__holder {
+    width: 100%;
+    height: 100%;
+    @include min-width-and-height(280px, 320px);
+    @include max-width-and-height(100%, 640px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__search {
     display: block;
     width: 100%;
-    height: 10%;
+    height: 1%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
     border: none;
@@ -119,11 +137,39 @@
     line-height: 100%;
     color: $black;
     background-color: $white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 10px 20px;
   }
 
+  &__select-holder {
+    width: 100%;
+    height: 1%;
+    @include min-width-and-height(280px, 40px);
+    @include max-width-and-height(100%, 60px);
+    margin-bottom: 15px;
+    background: transparent;
+  }
+
+  &__checkbox-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+
+  &__single-input-wrapper {
+    height: 20px;
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
   &__type-of-cards {
+    display: none;
     
     &--default {
 
@@ -132,6 +178,53 @@
     &--users {
 
     }
+  }
+
+  &__single-label {
+    padding-left: 30px;
+  }
+
+  &__type-of-cards + label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    border: 1px solid $black;
+    vertical-align: middle;
+  }
+
+  &__type-of-cards:checked + label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    background-image: url(/src/img/know-it-all-checkbox-16-16.svg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    border: 1px solid $white;
+    vertical-align: middle;
+  }
+
+  &__date-wrapper {
+    width: 100%;
+    height: 1%;
+    @include min-width-and-height(280px, 40px);
+    @include max-width-and-height(100%, 60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
   }
 
   &__date-input {
@@ -148,11 +241,16 @@
     padding: 10px 20px;
   }
 
+  &__date-space {
+    background-color: transparent;
+    width: 20px;
+  }
+
   &__reset-date-button {
-    width: 50%;
-    height: 10%;
+    width: 10vmin;
+    height: 10vmin;
     @include min-width-and-height(40px, 40px);
-    @include max-width-and-height(100%, 60px);
+    @include max-width-and-height(60px, 60px);
     border: none;
     border-radius: 25px;
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
@@ -165,7 +263,7 @@
   &__reset-filter-button {
     display: block;
     width: 100%;
-    height: 10%;
+    height: 1%;
     @include min-width-and-height(280px, 40px);
     @include max-width-and-height(100%, 60px);
     border: none;
@@ -175,6 +273,7 @@
     color: $black;
     background-color: $white;
     cursor: pointer;
+    margin-bottom: 15px;
   }
 
   &__cards-counter {
@@ -192,6 +291,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
   }
 
   &__cards-counter-preloader{
@@ -205,8 +305,67 @@
   }
 }
 
+.single-author {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__picture {
+    margin-right: 20px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__name {
+    @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
+    line-height: 100%;
+  }
+
+  &__links-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__link-item {
+    text-decoration: none;
+    margin-right: 10px;
+    width: 20px;
+  }
+
+  &__icon {
+    width: 1%;
+    height: 1%;
+    @include min-width-and-height(20px, 20px);
+    cursor: pointer;
+  }
+}
+
 .trash-box {
   display: none;
   visibility: hidden;
   overflow: hidden;
+}
+
+.empty-card-holder {
+  width: 100%;
+  height: 100%;
+  @include min-width-and-height(280px, 450px);
+  @include max-width-and-height(60vw, 640px);
+  background-color: transparent;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+  z-index: $top-layer;
 }

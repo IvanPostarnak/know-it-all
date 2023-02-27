@@ -74,48 +74,63 @@
             <source srcset="./src/img/know-it-all-filter-320-80.webp" media="(min-width: 321px)" type="image/webp">
             <img src="./src/img/know-it-all-filter-320-80.png" alt="">
           </picture>
-          <input class="filter__search js-filter-search"
-                      name="filtered-text"
-                      type="text"
-                      placeholder="Search through cards..."
-                      tabindex="3"
-                      required>
-          <input class="filter__type-of-cards--default js-default-type"
-                type="checkbox"
-                name="type-of-cards"
-                id="default-cards"
-                checked>
-          <label for="default-cards">default</label>
-          <input class="filter__type-of-cards--users js-users-type"
-                type="checkbox"
-                name="type-of-cards"
-                id="users-cards"
-                checked>
-          <label for="users-cards">user's</label>
-          <div class="add-card-form__select-holder js-select-filter-holder">
-            <div class="one-field-preloader">
-              <div class="loadingio-spinner-pulse-ckjnjglaokr">
-                <div class="ldio-l70we991ur">
-                  <div></div><div></div><div></div>
+          <div class="filter__holder">
+            <input class="filter__search js-filter-search"
+                   name="filtered-text"
+                   type="text"
+                   placeholder="Search through cards..."
+                   tabindex="3"
+                   required>
+            <div class="filter__select-holder js-select-filter-holder">
+              <div class="one-field-preloader">
+                <div class="loadingio-spinner-pulse-ckjnjglaokr">
+                  <div class="ldio-l70we991ur">
+                    <div></div><div></div><div></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="filter__date-wrapper">
-            <input class="filter__date-input js-date-filter"
-                    name="filtered-text"
-                    type="date"
-                    value=""
-                    tabindex="3"
-                    required>
-            <button class="filter__reset-date-button js-reset-date-button">X</button>
-          </div>
-          <button class="filter__reset-filter-button js-reset-filter-button">Reset filter</button>
-          <div class="filter__cards-counter js-filter-cards-counter">
-            <div class="filter__cards-counter-preloader">
-              <div class="loadingio-spinner-pulse-ckjnjglaokr">
-                <div class="ldio-l70we991ur">
-                  <div></div><div></div><div></div>
+            <div class="filter__date-wrapper">
+              <input class="filter__date-input js-date-filter"
+                     name="filtered-text"
+                     type="date"
+                     value=""
+                     tabindex="3"
+                     required>
+              <div class="filter__date-space"></div>
+              <button class="filter__reset-date-button js-reset-date-button">X</button>
+            </div>
+            <div class="filter__checkbox-wrapper">
+              <div class="filter__single-input-wrapper">
+                <input class="filter__type-of-cards filter__type-of-cards--default js-default-type"
+                       type="checkbox"
+                       name="type-of-cards"
+                       id="default-cards"
+                       checked>
+                <label class="filter__single-label" 
+                       for="default-cards">
+                       default
+                </label>
+              </div>
+              <div class="filter__single-input-wrapper">
+                <input class="filter__type-of-cards filter__type-of-cards--users js-users-type"
+                       type="checkbox"
+                       name="type-of-cards"
+                       id="users-cards"
+                       checked>
+                <label class="filter__single-label"
+                       for="users-cards">
+                       user's
+                </label>
+              </div>
+            </div>
+            <button class="filter__reset-filter-button js-reset-filter-button">Reset filter</button>
+            <div class="filter__cards-counter js-filter-cards-counter">
+              <div class="filter__cards-counter-preloader">
+                <div class="loadingio-spinner-pulse-ckjnjglaokr">
+                  <div class="ldio-l70we991ur">
+                    <div></div><div></div><div></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -150,9 +165,43 @@
           <source srcset="./src/img/know-it-all-authors-320-80.webp" media="(min-width: 321px)" type="image/webp">
           <img src="./src/img/know-it-all-authors-320-80.png" alt="Know it all : authors">
         </picture>
-        <div class="slide__inner slide__inner--footer">
+        <div class="slide__inner slide__inner--slide-footer">
           <div class="single-author">
-            
+            <picture class = "single-author__picture">
+              <source srcset="./src/img/know-it-all-author-64-64.svg" media="(min-width: 321px)" type="image/svg+xml">
+              <img src="./src/img/know-it-all-author-64-64.png" alt="">
+            </picture>
+            <div class="single-author__info">
+              <p class="single-author__name">Ivan Postarnak</p>
+              <div class="single-author__links-wrapper">
+                <a href="https://vk.com/ivanpostarnak"
+                   target="blank" 
+                   class="single-author__link-item">
+                   <img src="./src/img/vk-icon.svg" alt="" class="single-author__icon">
+                </a>
+                <a href="https://github.com/IvanPostarnak"
+                   target="blank" 
+                   class="single-author__link-item">
+                   <img src="./src/img/github-icon.svg" alt="" class="single-author__icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="single-author">
+            <picture class = "single-author__picture">
+              <source srcset="./src/img/know-it-all-author-64-64.svg" media="(min-width: 321px)" type="image/svg+xml">
+              <img src="./src/img/know-it-all-author-64-64.png" alt="">
+            </picture>
+            <div class="single-author__info">
+              <p class="single-author__name">Sam Postarnak</p>
+              <div class="single-author__links-wrapper">
+                <a href="https://vk.com/id279842056"
+                   target="blank" 
+                   class="single-author__link-item">
+                   <img src="./src/img/vk-icon.svg" alt="" class="single-author__icon">
+                </a>
+              </div>
+            </div>
           </div>
         </div> 
       </div>
