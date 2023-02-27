@@ -28,7 +28,7 @@ export default async function renderCards() {
 
   singleHoldersArray.forEach((holder) => {
     let category = holder.querySelector('.single-card__main-category');
-    holder.style.border = `2px solid ${categories[category.textContent].color}`;
+    holder.style.borderBottom = `3px solid ${categories[category.textContent].color}`;
     category.style.color = categories[category.textContent].color;
   })
 }

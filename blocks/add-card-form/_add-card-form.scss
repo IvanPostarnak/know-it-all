@@ -27,7 +27,7 @@
     @include min-width-and-height(300px, 40px);
     @include max-width-and-height(100%, 40px);
     border: none;
-    border-radius: 25px;
+    border-bottom: 1px solid rgba($black, 0.2);
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;
     color: $black;
@@ -43,7 +43,7 @@
     @include min-width-and-height(300px, 120px);
     @include max-width-and-height(100%, 120px);
     border: none;
-    border-radius: 25px;
+    border-bottom: 1px solid rgba($black, 0.2);
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 1em;
     color: $black;
@@ -58,6 +58,7 @@
     height: 1%;
     @include min-width-and-height(300px, 40px);
     @include max-width-and-height(100%, 40px);
+    border-bottom: 1px solid rgba($black, 0.2);
     margin-bottom: 10px;
     background: transparent;
   }
@@ -72,7 +73,7 @@
     color: rgba($black, $half-opacity);
     background-color: $white;
     border: none;
-    border-radius: 25px;
+    border-bottom: 1px solid rgba($black, 0.2);
     padding: 10px 20px;
 
     &--main-catefory {
@@ -95,7 +96,7 @@
     @include min-width-and-height(300px, 40px);
     @include max-width-and-height(100%, 40px);
     border: none;
-    border-radius: 25px;
+    border-bottom: 1px solid rgba($black, 0.2);
     @include font-family-weight-size($jetbrains-font, $regular, 1.6rem);
     line-height: 100%;
     color: $black;
