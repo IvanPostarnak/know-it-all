@@ -65,6 +65,11 @@
     padding-top: 30px;
   }
 
+  &__logo-holder {
+    width: auto;
+    height: auto;
+  }
+
   &__inner {
     width: 100%;
     height: 100%;
@@ -312,6 +317,10 @@
 
 .section-title-picture {
   margin-bottom: 20px;
+
+  &--main {
+    margin-bottom: 0;
+  }
 }
 
 .single-author {
